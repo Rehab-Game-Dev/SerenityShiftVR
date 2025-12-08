@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 607a5643efb168f429e438f7d6ad270a
+timeCreated: 1464350149
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/PostProcessing/Resources/Shaders/ScreenSpaceReflection.shader
+  uploadId: 292189

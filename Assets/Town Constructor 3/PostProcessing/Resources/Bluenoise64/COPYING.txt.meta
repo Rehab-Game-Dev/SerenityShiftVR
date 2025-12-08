@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fa3fc398fe396744c9299e70b63bfdd7
+timeCreated: 1485181015
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/PostProcessing/Resources/Bluenoise64/COPYING.txt
+  uploadId: 292189

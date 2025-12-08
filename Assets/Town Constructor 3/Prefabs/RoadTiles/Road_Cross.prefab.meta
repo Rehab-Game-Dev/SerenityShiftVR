@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a100a7be45166b748b2dd3554efeafdf
+timeCreated: 1474351047
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/RoadTiles/Road_Cross.prefab
+  uploadId: 292189

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 410765228384b5e49adc44722d821c1a
+timeCreated: 1474343665
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/Building2/B2_OuterWall.prefab
+  uploadId: 292189

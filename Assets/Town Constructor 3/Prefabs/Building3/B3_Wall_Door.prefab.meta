@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ef41850f0d1c8444d8b2fd59d5845efe
+timeCreated: 1474345283
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/Building3/B3_Wall_Door.prefab
+  uploadId: 292189

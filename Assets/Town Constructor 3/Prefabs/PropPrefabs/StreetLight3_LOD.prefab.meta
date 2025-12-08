@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: edeee374715657a49a88b0d8164eaeba
+timeCreated: 1471816338
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/PropPrefabs/StreetLight3_LOD.prefab
+  uploadId: 292189

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: faeb738b5a2c3ff43bd104dd5b1a275c
+timeCreated: 1476954194
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/PostProcessing/Resources/Shaders/DiskKernels.cginc
+  uploadId: 292189

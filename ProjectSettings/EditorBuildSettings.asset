@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 73141c0b5dfdada4695166fc564f4cb8
+  - enabled: 1
+    path: Assets/Scenes/StreetScene.unity
+    guid: 7982ad223a75084478551991abf6021a
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8c7ad92bf742c464293aeeb2259e4a5c, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 97ecbea5087e1024a92aa148e0307904, type: 2}
+  m_UseUCBPForAssetBundles: 0

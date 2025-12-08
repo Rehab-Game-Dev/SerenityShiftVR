@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 1e20e66aa2deb7943993c444137d9acd
+timeCreated: 1487328709
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/PostProcessing/Runtime/Models/FogModel.cs
+  uploadId: 292189

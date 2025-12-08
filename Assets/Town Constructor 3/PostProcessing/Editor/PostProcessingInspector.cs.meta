@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 27fa95984763d9d47bbad59e7fdb66fe
+timeCreated: 1467188923
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/PostProcessing/Editor/PostProcessingInspector.cs
+  uploadId: 292189

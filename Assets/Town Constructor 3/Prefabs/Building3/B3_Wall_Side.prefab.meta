@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5aa3db217bca5084a8307ede5cc5922a
+timeCreated: 1474345249
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/Building3/B3_Wall_Side.prefab
+  uploadId: 292189

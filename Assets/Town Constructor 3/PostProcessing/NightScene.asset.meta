@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 641f0d14b2988f24ba36706cc0f70813
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/PostProcessing/NightScene.asset
+  uploadId: 292189

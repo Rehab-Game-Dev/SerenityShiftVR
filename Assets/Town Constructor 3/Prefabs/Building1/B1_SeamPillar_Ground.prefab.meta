@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5a358dec75c76db48920696d8f22218f
+timeCreated: 1474342481
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/Building1/B1_SeamPillar_Ground.prefab
+  uploadId: 292189

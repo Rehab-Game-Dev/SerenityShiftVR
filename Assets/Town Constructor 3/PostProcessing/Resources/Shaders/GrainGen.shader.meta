@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 11852d1b1b034654bb03e7c8fda28fbf
+timeCreated: 1476347976
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/PostProcessing/Resources/Shaders/GrainGen.shader
+  uploadId: 292189

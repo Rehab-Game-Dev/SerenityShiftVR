@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: afb349ef0bffd144db2bdd25630f648e
+timeCreated: 1472650750
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/PostProcessing/Editor/Utils/CurveEditor.cs
+  uploadId: 292189

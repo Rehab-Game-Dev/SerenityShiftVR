@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 630a33391c41013418ded010fba57dd3
+timeCreated: 1474345252
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/Building3/B3_Wall_Flat.prefab
+  uploadId: 292189

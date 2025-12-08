@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ec6c5af987867f54aa08fba81ee279bd
+timeCreated: 1472807140
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/PostProcessing/Resources/Shaders/TAA.shader
+  uploadId: 292189

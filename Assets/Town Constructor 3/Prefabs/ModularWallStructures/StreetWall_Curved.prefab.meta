@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 838214ad01c7ee344b66e1507aa07c81
+timeCreated: 1474350665
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/ModularWallStructures/StreetWall_Curved.prefab
+  uploadId: 292189
