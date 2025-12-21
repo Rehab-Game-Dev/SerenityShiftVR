@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 73141c0b5dfdada4695166fc564f4cb8
   - enabled: 1
-    path: Assets/Scenes/StreetScene.unity
+    path: Assets/Scenes/StreetScene - tutorial.unity
     guid: 7982ad223a75084478551991abf6021a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 44306a76d8368cd48a25d0df38ee2b4e, type: 2}
