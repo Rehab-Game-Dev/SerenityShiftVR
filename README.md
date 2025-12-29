@@ -12,9 +12,11 @@ Ifat
 
 SerenityShift is a simulation game in VR technology that treats anxiety by using controled daily environemnts to perform tasks proven and bucked up by studies to be useful.
 
-wiki page:
+wiki pages:
 
 https://github.com/Rehab-Game-Dev/SerenityShift/wiki
+
+https://github.com/Rehab-Game-Dev/SerenityShiftVR/wiki/assignment-8-%E2%80%90-B
 
 
 Itch.io links:
