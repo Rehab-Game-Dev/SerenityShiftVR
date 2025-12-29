@@ -19,7 +19,10 @@ https://github.com/Rehab-Game-Dev/SerenityShift/wiki
 
 Itch.io links:
 
+Current demo:
+
 https://ori755.itch.io/ex8-ori-and-yarin
 
+Week 6 demo(tutorial only) :
 https://ori755.itch.io/serinity-ex6
 
