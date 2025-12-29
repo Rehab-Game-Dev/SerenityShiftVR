@@ -4,8 +4,8 @@ public class CursorManager : MonoBehaviour
 {
     void Update()
     {
-        // Press ESC to unlock cursor for UI
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // Press Tab to unlock cursor for UI
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

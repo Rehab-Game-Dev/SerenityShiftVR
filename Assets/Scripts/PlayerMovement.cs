@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // New Input System
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovementPC : MonoBehaviour
@@ -11,8 +11,8 @@ public class PlayerMovementPC : MonoBehaviour
     public float jumpHeight = 1.2f;
 
     [Header("Look")]
-    public Transform cameraTransform;      // שימי כאן את ה-Main Camera
-    public float mouseSensitivity = 0.12f; // תכווני לפי הרגשה
+    public Transform cameraTransform;
+    public float mouseSensitivity = 0.12f;
     public float pitchMin = -80f;
     public float pitchMax = 80f;
 
@@ -65,12 +65,13 @@ public class PlayerMovementPC : MonoBehaviour
     {
         if (Keyboard.current == null) return;
 
-        // WASD
         Vector2 input = Vector2.zero;
-        if (Keyboard.current.wKey.isPressed) input.y += 1f;
-        if (Keyboard.current.sKey.isPressed) input.y -= 1f;
-        if (Keyboard.current.dKey.isPressed) input.x += 1f;
-        if (Keyboard.current.aKey.isPressed) input.x -= 1f;
+
+        if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) input.y += 1f;
+        if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) input.y -= 1f;
+        if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) input.x += 1f;
+        if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) input.x -= 1f;
+
         input = Vector2.ClampMagnitude(input, 1f);
 
         bool sprint = Keyboard.current.leftShiftKey.isPressed || Keyboard.current.rightShiftKey.isPressed;
@@ -78,7 +79,6 @@ public class PlayerMovementPC : MonoBehaviour
 
         Vector3 move = (transform.right * input.x + transform.forward * input.y) * speed;
 
-        // Ground check + Jump
         bool grounded = controller.isGrounded;
         if (grounded && verticalVelocity < 0f) verticalVelocity = -2f;
 
