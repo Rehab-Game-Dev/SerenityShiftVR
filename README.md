@@ -23,4 +23,3 @@ https://ori755.itch.io/ex8-ori-and-yarin
 
 https://ori755.itch.io/serinity-ex6
 
-https://yarinkash1.itch.io/serenity-shift-vr-levels-demo
