@@ -1,62 +1,83 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections.Generic;
 
 public class CarBrain : MonoBehaviour
 {
-    [Header("Settings")]
-    public float sensorLength = 5f; // למרחק כמה מטרים המכונית בודקת מולה?
-    public float destroyDistance = 2f; // באיזה מרחק מהסוף למחוק את המכונית?
+    [Header("NavMesh Settings")]
+    private NavMeshAgent agent;
+    private List<Transform> pathPoints; 
+    private int currentPointIndex = 0;
 
-    [Header("References")]
-    public NavMeshAgent agent;
-    public Transform destination; // יתקבל אוטומטית מה-Spawner
+    [Header("Sensors (Collision Avoidance)")]
+    public float detectionDistance = 5f; // למרחק כמה מטרים להסתכל קדימה
+    public LayerMask obstacleLayers;     // במה אנחנו מתנגשים? (מכוניות, אנשים)
+    public bool isStopped = false;       // האם אנחנו בבלימה כרגע
 
-    void Start()
+    void Awake()
     {
-        // אם לא חיברת ידנית, הוא מוצא לבד
-        if (agent == null) agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
+    }
+
+    public void SetPath(List<Transform> newPath)
+    {
+        pathPoints = newPath;
+        currentPointIndex = 0;
         
-        // אם ה-Spawner נתן יעד, תתחיל לנסוע אליו
-        if (destination != null)
+        if (pathPoints != null && pathPoints.Count > 0)
         {
-            agent.SetDestination(destination.position);
+            agent.SetDestination(pathPoints[currentPointIndex].position);
         }
     }
 
-  void Update()
+    void Update()
     {
-        // --- בדיקת הגנה חדשה ---
-        // אם המכונית לא קיימת, או שהיא עדיין לא התחברה לכביש - אל תעשה כלום
-        if (agent == null || !agent.isOnNavMesh) return;
+        // 1. בדיקת חיישנים - האם יש משהו לפנינו?
+        CheckForObstacles();
 
-        // מכאן ממשיך הקוד הרגיל שלך...
-        
-        // --- חלק 1: החיישן ---
-        RaycastHit hit;
-        Vector3 sensorStartPos = transform.position + Vector3.up * 0.5f; 
-        bool obstacleDetected = false;
-        
-        if (Physics.Raycast(sensorStartPos, transform.forward, out hit, sensorLength))
+        // אם אנחנו בבלימה, אל תמשיך לחישובי המסלול
+        if (isStopped) return;
+
+        // 2. לוגיקת נסיעה רגילה (תחנות)
+        if (pathPoints == null || pathPoints.Count == 0) return;
+
+        if (agent.remainingDistance < 2f && !agent.pathPending)
         {
-            if (hit.collider.CompareTag("Player") || hit.collider.CompareTag("NPC"))
+            currentPointIndex++;
+            if (currentPointIndex < pathPoints.Count)
             {
-                obstacleDetected = true;
+                agent.SetDestination(pathPoints[currentPointIndex].position);
+            }
+            else
+            {
+                Destroy(gameObject); 
             }
         }
-        agent.isStopped = obstacleDetected;
-
-        // --- חלק 2: מחיקה בסוף ---
-        if (destination != null && !agent.pathPending && agent.remainingDistance < destroyDistance)
-        {
-            Destroy(gameObject);
-        }
     }
 
-    // ציור הקרן האדומה ב-Editor כדי שתוכלי לראות אותה
-    void OnDrawGizmos()
+    void CheckForObstacles()
     {
-        Gizmos.color = Color.red;
-        Vector3 sensorStartPos = transform.position + Vector3.up * 0.5f;
-        Gizmos.DrawRay(sensorStartPos, transform.forward * sensorLength);
+        RaycastHit hit;
+        // יורה קרן לייזר בלתי נראית קדימה
+        // אנחנו מתחילים אותה טיפה למעלה (0.5) וטיפה קדימה כדי לא לפגוע בעצמנו
+        Vector3 sensorStart = transform.position + transform.forward * 1.5f + Vector3.up * 0.5f;
+
+        // ציור הקרן ב-Scene כדי שתוכלי לראות אותה (קו אדום)
+        Debug.DrawRay(sensorStart, transform.forward * detectionDistance, Color.red);
+
+        if (Physics.Raycast(sensorStart, transform.forward, out hit, detectionDistance, obstacleLayers))
+        {
+            // אם פגענו במשהו, והמשהו הזה הוא לא אנחנו
+            if (hit.collider.gameObject != gameObject)
+            {
+                agent.isStopped = true; // עצור!
+                isStopped = true;
+                return;
+            }
+        }
+
+        // אם לא פגענו בכלום - שחרר את הבלמים
+        agent.isStopped = false;
+        isStopped = false;
     }
 }

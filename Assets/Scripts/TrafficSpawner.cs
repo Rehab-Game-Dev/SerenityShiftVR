@@ -1,45 +1,31 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class TrafficSpawner : MonoBehaviour
 {
-    // שים לב: אלו סוגריים מרובעים [] שאומרים שזו רשימה
-    public GameObject[] carPrefabs; 
-    
-    public Transform destination;   
-    public float spawnInterval = 3f; 
+    public GameObject[] carPrefabs; // רשימת סוגי מכוניות
+    public List<Transform> myRoute; // המסלול שהספונר הזה אחראי עליו
+    public float spawnInterval = 5f;
 
     void Start()
     {
-        StartCoroutine(SpawnCarsRoutine());
+        InvokeRepeating("SpawnCar", 1f, spawnInterval);
     }
 
-    IEnumerator SpawnCarsRoutine()
+    void SpawnCar()
     {
-        while (true) 
-        {
-            SpawnRandomCar(); // קריאה לפונקציה החדשה
-            yield return new WaitForSeconds(spawnInterval);
-        }
-    }
-
-    void SpawnRandomCar()
-    {
-        // ודא שיש בכלל מכוניות ברשימה כדי לא לקבל שגיאה
-        if (carPrefabs.Length == 0) return;
-
-        // 1. הגרלה: בחר מספר אקראי בין 0 למספר המכוניות שיש
+        // בחר מכונית אקראית
         int randomIndex = Random.Range(0, carPrefabs.Length);
         GameObject selectedCar = carPrefabs[randomIndex];
 
-        // 2. צור את הרכב שנבחר
+        // צור את המכונית במיקום של הספונר
         GameObject newCar = Instantiate(selectedCar, transform.position, transform.rotation);
 
-        // 3. תן לו את היעד
+        // תן למכונית את המסלול שמוגדר בספונר הזה
         CarBrain brain = newCar.GetComponent<CarBrain>();
         if (brain != null)
         {
-            brain.destination = this.destination;
+            brain.SetPath(myRoute);
         }
     }
 }
