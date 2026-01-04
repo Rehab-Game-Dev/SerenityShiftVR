@@ -38,7 +38,7 @@ public class AuthManager : MonoBehaviour
 
     public void GuestLogin()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Environment Menu");
     }
 
     public void ClosePanel()
@@ -65,7 +65,7 @@ public class AuthManager : MonoBehaviour
             {
                 await AuthenticationService.Instance.SignUpWithUsernamePasswordAsync(u, p);
                 SaveLevelData(1);
-                SceneManager.LoadScene("StreetScene - tutorial");
+                SceneManager.LoadScene("Environment Menu");
             }
             else
             {
