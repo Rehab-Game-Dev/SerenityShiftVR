@@ -3,6 +3,7 @@ using UnityEngine;
 public class PCWand : MonoBehaviour
 {
     public float range = 100f; // מרחק תפיסה
+    private bool hasBeenCaught = false; // למנוע ספירה כפולה
 
     void Update()
     {
@@ -23,8 +24,12 @@ public class PCWand : MonoBehaviour
             // בדיקה אם פגענו בציפור (לפי התגית שיצרנו קודם)
             if (hit.transform.CompareTag("Bird"))
             {
-                Debug.Log("PC Player caught a bird!");
-                Destroy(hit.transform.gameObject); // השמדת הציפור
+                // בדיקה שהציפור לא נתפסה כבר
+                BirdCatchable birdScript = hit.transform.GetComponent<BirdCatchable>();
+                if (birdScript != null && !birdScript.hasBeenCaught)
+                {
+                    birdScript.CatchBird();
+                }
             }
         }
     }

@@ -15,14 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 73141c0b5dfdada4695166fc564f4cb8
   - enabled: 1
-    path: Assets/Scenes/StreetScene - old tutorial.unity
-    guid: 7982ad223a75084478551991abf6021a
+    path: Assets/Scenes/StreetScene - tutorial.unity
+    guid: a57e157ad33869942a126513a48d1646
   - enabled: 1
     path: Assets/Scenes/StreetScene - easy.unity
-    guid: ea57c9a9afed5c04093bdba85b2b628f
+    guid: 9f7345fedd9f21f4d97b4c50e55b63c2
   - enabled: 1
     path: Assets/Scenes/StreetScene - medium.unity
-    guid: b320b7316235e0048981f4f4f7f8331e
+    guid: 9976efc7cf4f8314281deb4a3ac13aad
   - enabled: 1
     path: Assets/Scenes/StreetScene - hard.unity
     guid: 78e9d6d3455191a4ca6bdedb670404c4
