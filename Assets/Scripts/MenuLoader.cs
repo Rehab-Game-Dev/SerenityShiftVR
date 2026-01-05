@@ -27,4 +27,15 @@ public class MenuLoader : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void LoadTrain()
+    {
+        // Do nothing for now    
+    }
+    
+    public void LoadStreet()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
 }
