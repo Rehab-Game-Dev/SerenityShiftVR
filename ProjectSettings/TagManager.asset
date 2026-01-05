@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - CatchableNPC
+  - Bird
   layers:
   - Default
   - TransparentFX
