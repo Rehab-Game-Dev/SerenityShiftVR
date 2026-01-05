@@ -21,9 +21,5 @@ Itch.io links:
 
 Current demo:
 
-https://ori755.itch.io/ex8-ori-and-yarin
-
-Week 6 demo(tutorial only) :
-
-https://ori755.itch.io/serinity-ex6
+https://yarinkash1.itch.io/serenity-shift-alpha-demo
 
