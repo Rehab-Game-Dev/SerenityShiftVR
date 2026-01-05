@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 9199426670570675372}
   - component: {fileID: 3169118811670785674}
   - component: {fileID: -2661175343273312321}
+  - component: {fileID: 5379368368293984341}
   m_Layer: 7
   m_Name: Taxi
   m_TagString: Untagged
@@ -147,7 +148,7 @@ MonoBehaviour:
   detectionDistance: 5
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   isStopped: 0
 --- !u!195 &9199426670570675372
 NavMeshAgent:
@@ -158,19 +159,19 @@ NavMeshAgent:
   m_GameObject: {fileID: 228098317824306412}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Radius: 3
+  m_Speed: 7
+  m_Acceleration: 4
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 40
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: -0.17
   m_WalkableMask: 8
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!65 &3169118811670785674
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -209,6 +210,33 @@ MonoBehaviour:
   - {fileID: 5048427644808937322}
   - {fileID: 7887174622699554044}
   spinSpeed: 100
+--- !u!54 &5379368368293984341
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228098317824306412}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 6
+  m_CollisionDetection: 0
 --- !u!1 &1118089896964578665
 GameObject:
   m_ObjectHideFlags: 0
