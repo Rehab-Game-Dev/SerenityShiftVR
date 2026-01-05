@@ -4,34 +4,32 @@ using UnityEngine;
 
 public class BirdManager : MonoBehaviour
 {
-    [Header("Settings")]
-    public GameObject birdPrefab; // הציפור שאת רוצה ליצור (חייב להיות פריפאב)
-    public List<Transform> spawnPoints; // רשימה של כל ה-15 מקומות
-    public int amountToSpawn = 3; // כמה ציפורים ליצור (ביקשת 3)
+    // במקום נקודות ריקות, אנחנו גוררים לפה את הציפורים האמיתיות מהסצנה
+    public List<GameObject> birdsInScene; 
+    public int amountToSpawn = 3;
 
     void Start()
     {
-        SpawnRandomBirds();
+        ActivateRandomBirds();
     }
 
-    void SpawnRandomBirds()
+    void ActivateRandomBirds()
     {
-        // 1. יצירת רשימה זמנית כדי לא להרוס את הרשימה המקורית
-        List<Transform> availablePoints = new List<Transform>(spawnPoints);
+        // מעתיקים לרשימה זמנית כדי לא להוציא את אותה ציפור פעמיים
+        List<GameObject> availableBirds = new List<GameObject>(birdsInScene);
 
         for (int i = 0; i < amountToSpawn; i++)
         {
-            if (availablePoints.Count == 0) break; // הגנה למקרה שאין מספיק נקודות
+            if (availableBirds.Count == 0) break;
 
-            // 2. בחירת אינדקס רנדומלי
-            int randomIndex = Random.Range(0, availablePoints.Count);
-            Transform selectedPoint = availablePoints[randomIndex];
+            int randomIndex = Random.Range(0, availableBirds.Count);
+            
+            // במקום ליצור - אנחנו פשוט מדליקים את הציפור
+            GameObject selectedBird = availableBirds[randomIndex];
+            selectedBird.SetActive(true);
 
-            // 3. יצירת הציפור בנקודה שנבחרה
-            Instantiate(birdPrefab, selectedPoint.position, selectedPoint.rotation);
-
-            // 4. מחיקת הנקודה מהרשימה הזמנית כדי שלא תיווצר שם עוד ציפור
-            availablePoints.RemoveAt(randomIndex);
+            // ומוציאים אותה מהרשימה הזמנית
+            availableBirds.RemoveAt(randomIndex);
         }
     }
 }
