@@ -20,6 +20,6 @@ https://github.com/Rehab-Game-Dev/SerenityShiftVR/wiki
 Itch.io links:
 
 Current demo:
-[
+
 https://yarinkash1.itch.io/serenity-shift-vr-alpha-demo-b
 
