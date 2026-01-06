@@ -10,6 +10,12 @@ public class BirdCatchable : MonoBehaviour
         
         hasBeenCaught = true;
         
+        // Show the bird caught message
+        if (BirdMessageController.Instance != null)
+        {
+            BirdMessageController.Instance.OnBirdCaught();
+        }
+
         if (BirdGameManager.Instance != null)
         {
             BirdGameManager.Instance.BirdCaught();
