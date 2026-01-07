@@ -21,5 +21,5 @@ Itch.io links:
 
 Current demo:
 
-https://yarinkash1.itch.io/serenity-shift-vr-alpha-demo-c
+https://yarinkash1.itch.io/serenity-shift-vr-alpha-demo-d
 
