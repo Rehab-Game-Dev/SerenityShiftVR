@@ -23,3 +23,6 @@ Current demo:
 
 https://yarinkash1.itch.io/serenity-shift-vr-alpha-demo-d
 
+Youtube demo:
+
+https://youtu.be/bzBSL8CwUaQ
