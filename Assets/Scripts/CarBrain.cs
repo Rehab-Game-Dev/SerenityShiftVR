@@ -26,43 +26,52 @@ public class CarBrain : MonoBehaviour
         
         if (pathPoints != null && pathPoints.Count > 0)
         {
+            // שליחת המכונית לנקודה הראשונה ברגע שהיא נוצרת
             agent.SetDestination(pathPoints[currentPointIndex].position);
         }
     }
 
     void Update()
     {
-        // ... (הבדיקה של המכשולים נשארת כאן) ...
+        // תיקון 1: קריאה לפונקציית חיישן המרחק בכל פריים
+        CheckForObstacles();
 
+        // אם המכונית בבלימה, אל תמשיך ללוגיקה של התנועה
         if (isStopped) return;
+        
+        // בדיקה שהמסלול תקין
         if (pathPoints == null || pathPoints.Count == 0) return;
 
-        // התיקון: הגדלנו את הטווח ל-4 מטרים
-        // המכונית לא תנסה להגיע בול לאמצע, אלא "תחתוך" יפה לנקודה הבאה
+        // תיקון 2: שימוש בטווח של 4 מטרים כדי למנוע תקיעות ב-Waypoints
         if (!agent.pathPending && agent.remainingDistance < 4f)
         {
             currentPointIndex++;
+            
             if (currentPointIndex < pathPoints.Count)
             {
+                // מעבר ליעד הבא ברשימה
                 agent.SetDestination(pathPoints[currentPointIndex].position);
             }
             else
             {
-                Destroy(gameObject); // או ה-Warp שדיברנו עליו
+                // אם הגענו לסוף המסלול - השמדת המכונית
+                Destroy(gameObject);
             }
         }
     }
 
-   void CheckForObstacles()
+    void CheckForObstacles()
     {
         RaycastHit hit;
+        // מיקום החיישן - קצת מעל פני המכונית וקדימה
         Vector3 sensorStart = transform.position + transform.forward * 1.5f + Vector3.up * 0.5f;
         
-        // בדיקה האם יש מכשול
         bool obstacleDetected = false;
 
+        // שליחת קרן (Raycast) לבדיקת מכשולים קדימה
         if (Physics.Raycast(sensorStart, transform.forward, out hit, detectionDistance, obstacleLayers))
         {
+            // וודא שלא פגענו בעצמנו
             if (hit.collider.gameObject != gameObject)
             {
                 obstacleDetected = true;
@@ -72,16 +81,16 @@ public class CarBrain : MonoBehaviour
         if (obstacleDetected)
         {
             // --- בלימת חירום ---
-            agent.isStopped = true;       // עצור תנועה
-            agent.velocity = Vector3.zero; // אפס את המהירות מיידית
-            agent.angularSpeed = 0f;       // שים את ההגה ישר! (מונע סיבוב במקום)
+            agent.isStopped = true;       
+            agent.velocity = Vector3.zero; 
+            agent.angularSpeed = 0f;       // מונע מהמכונית להסתובב סביב עצמה בזמן עצירה
             isStopped = true;
         }
         else
         {
-            // --- שחרור בלמים ---
+            // --- המשך נסיעה ---
             agent.isStopped = false;
-            agent.angularSpeed = 120f;     // החזר את יכולת ההיגוי (120 זה הסטנדרט)
+            agent.angularSpeed = 120f;     
             isStopped = false;
         }
     }

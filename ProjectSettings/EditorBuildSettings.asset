@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Environment Menu.unity
     guid: a5fcb0a30d3bf724f886360351f9c314
   - enabled: 1
+    path: Assets/Scenes/MainMenu_VR.unity
+    guid: 98d1917a54b103540b2c9cc8b152f62e
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 73141c0b5dfdada4695166fc564f4cb8
   - enabled: 1

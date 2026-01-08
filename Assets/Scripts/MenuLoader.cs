@@ -3,27 +3,45 @@ using UnityEngine.SceneManagement;
 
 public class MenuLoader : MonoBehaviour
 {
+    // טעינת שלב הדרכה
     public void LoadTutorial()
     {
         SceneManager.LoadScene("StreetScene - tutorial");
     }
 
+    // טעינת שלב קל
     public void LoadEasy()
     {
         SceneManager.LoadScene("StreetScene - easy");
     }
 
+    // טעינת שלב בינוני
     public void LoadMedium()
     {
         SceneManager.LoadScene("StreetScene - medium");
     }
 
+    // טעינת שלב קשה
     public void LoadHard()
     {
         SceneManager.LoadScene("StreetScene - hard");
     }
-    
+
+    // פונקציה כללית לחזרה לתפריט ה-VR (מעודכן לשם הסצנה החדש שלך)
     public void LoadMainMenu()
+    {
+        // שיניתי ל-MainMenu_VR כדי שהכפתור בתוך המשחק יחזיר אותך למקום הנכון
+        SceneManager.LoadScene("MainMenu_VR");
+    }
+
+    // טעינת תפריט ה-VR באופן ספציפי
+    public void LoadMainMenuVR()
+    {
+        SceneManager.LoadScene("MainMenu_VR");
+    }
+
+    // פונקציה לטעינת תפריט המחשב (למקרה שתצטרך בעתיד)
+    public void LoadMainMenuPC()
     {
         SceneManager.LoadScene("MainMenu");
     }
@@ -32,10 +50,4 @@ public class MenuLoader : MonoBehaviour
     {
         // Do nothing for now    
     }
-    
-    public void LoadStreet()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-
 }
