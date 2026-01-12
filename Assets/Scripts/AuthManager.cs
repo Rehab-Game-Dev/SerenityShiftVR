@@ -26,7 +26,7 @@ public class AuthManager : MonoBehaviour
     {
         isSigningUp = true;
         inputPanel.SetActive(true);
-        statusText.text = "Create New Account";
+        statusText.text = "Create Account";
     }
 
     public void OpenSignIn()

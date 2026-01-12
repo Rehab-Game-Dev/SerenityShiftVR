@@ -30,8 +30,7 @@ public class MenuLoader : MonoBehaviour
     // פונקציה כללית לחזרה לתפריט ה-VR (מעודכן לשם הסצנה החדש שלך)
     public void LoadMainMenu()
     {
-        // שיניתי ל-MainMenu_VR כדי שהכפתור בתוך המשחק יחזיר אותך למקום הנכון
-        SceneManager.LoadScene("MainMenu_VR");
+        SceneManager.LoadScene("MainMenu");
     }
 
     // טעינת תפריט ה-VR באופן ספציפי

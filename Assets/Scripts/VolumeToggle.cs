@@ -7,13 +7,13 @@ public class VolumeToggle : MonoBehaviour
     public Sprite volumeEnabledSprite;
     public Sprite volumeDisabledSprite;
     
-    private Image buttonImage;
+    private RawImage buttonImage;
     private Button button;
-
+    
     void Start()
     {
-        // Get the Image component from the button
-        buttonImage = GetComponent<Image>();
+        // Get the RawImage component from Vol_Icon child
+        buttonImage = transform.Find("Vol_Icon").GetComponent<RawImage>();
         button = GetComponent<Button>();
         
         // Add click listener
@@ -22,7 +22,7 @@ public class VolumeToggle : MonoBehaviour
         // Set initial state from AudioManager
         UpdateVolumeIcon();
     }
-
+    
     public void ToggleVolume()
     {
         // Toggle music mute state in AudioManager
@@ -34,7 +34,7 @@ public class VolumeToggle : MonoBehaviour
         // Update the icon
         UpdateVolumeIcon();
     }
-
+    
     private void UpdateVolumeIcon()
     {
         // Get mute state from AudioManager
@@ -47,11 +47,11 @@ public class VolumeToggle : MonoBehaviour
         // Update sprite based on state
         if (isMuted)
         {
-            buttonImage.sprite = volumeDisabledSprite;
+            buttonImage.texture = volumeDisabledSprite.texture;
         }
         else
         {
-            buttonImage.sprite = volumeEnabledSprite;
+            buttonImage.texture = volumeEnabledSprite.texture;
         }
     }
 }
