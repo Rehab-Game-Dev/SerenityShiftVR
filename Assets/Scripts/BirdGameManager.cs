@@ -9,7 +9,7 @@ public class BirdGameManager : MonoBehaviour
     public int totalBirds = 3;
     
     [Header("UI Reference")]
-    public TextMeshProUGUI birdCounterText; // Reference to your bird counter text
+    public TextMeshProUGUI birdCounterText; 
     
     private void Awake()
     {
@@ -26,8 +26,20 @@ public class BirdGameManager : MonoBehaviour
         
         if (caughtCount >= totalBirds)
         {
-            Debug.Log("All birds caught! You win!");
-            // You can add win condition logic here
+            Debug.Log("All birds caught! Switching to buttons mission.");
+            
+            // --- העדכון החדש כאן ---
+            // אנחנו מחפשים את מנהל המשימות ומורים לו לעבור לשלב 3 (כפתורים)
+            MissionManager mm = FindObjectOfType<MissionManager>();
+            if (mm != null)
+            {
+                mm.SetMission(3); 
+            }
+            else
+            {
+                Debug.LogWarning("MissionManager not found in the scene!");
+            }
+            // -----------------------
         }
     }
     
