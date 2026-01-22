@@ -1,51 +1,51 @@
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuLoader : MonoBehaviour
 {
-    // טעינת שלב הדרכה
     public void LoadTutorial()
     {
         SceneManager.LoadScene("StreetScene - tutorial");
     }
-
-    // טעינת שלב קל
     public void LoadEasy()
     {
         SceneManager.LoadScene("StreetScene - easy");
     }
 
-    // טעינת שלב בינוני
     public void LoadMedium()
     {
         SceneManager.LoadScene("StreetScene - medium");
     }
 
-    // טעינת שלב קשה
     public void LoadHard()
     {
         SceneManager.LoadScene("StreetScene - hard");
     }
 
-    // פונקציה כללית לחזרה לתפריט ה-VR (מעודכן לשם הסצנה החדש שלך)
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        if (AuthManager.VR_ON)
+        {
+            SceneManager.LoadScene("MainMenu_VR");
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
-
-    // טעינת תפריט ה-VR באופן ספציפי
-    public void LoadMainMenuVR()
+    public void Street()
     {
-        SceneManager.LoadScene("MainMenu_VR");
+        if (AuthManager.VR_ON)
+        {
+            SceneManager.LoadScene("MainMenu_VR");
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
-
-    // פונקציה לטעינת תפריט המחשב (למקרה שתצטרך בעתיד)
-    public void LoadMainMenuPC()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-
-    public void LoadTrain()
+    public void Train()
     {
         // Do nothing for now    
     }

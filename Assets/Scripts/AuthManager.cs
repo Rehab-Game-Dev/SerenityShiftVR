@@ -8,29 +8,80 @@ using System.Collections.Generic;
 
 public class AuthManager : MonoBehaviour
 {
+    // Global VR mode flag - accessible from anywhere
+    public static bool VR_ON = false; // Default to PC mode
+
     [Header("UI References")]
     public GameObject inputPanel;
+    public GameObject VersionSelectionPanel;
     public TMP_InputField userField;
     public TMP_InputField passField;
     public TextMeshProUGUI statusText;
+    public GameObject initUIParent;
+    public TextMeshProUGUI detailsText;
+    public GameObject verSelCloseBtn;
+
+    
 
     private bool isSigningUp = false;
 
     async void Start()
     {
         await UnityServices.InitializeAsync();
-        inputPanel.SetActive(false);
+        
     }
+    public void SelectVRVersion()
+    {
+        setVR_true();
+        LoadLevelData();
+    }
+    
+    public void SelectPCVersion()
+    {
+        setVR_false();
+        LoadLevelData();
+    }
+
+    public void SelectVRVersion_guest()
+    {
+        setVR_true();
+    }
+    
+    public void SelectPCVersion_guest()
+    {
+        setVR_false();
+    }
+
+    public void setVR_true()
+    {
+        VR_ON = true;
+        Debug.Log("VR Mode selected");
+        SceneManager.LoadScene("Environment Menu");
+    }
+
+    public void setVR_false()
+    {
+        VR_ON = false;
+        Debug.Log("PC Mode selected");
+        SceneManager.LoadScene("Environment Menu");
+    }
+
 
     public void OpenSignUp()
     {
+        verSelCloseBtn.SetActive(false);
+        detailsText.fontSize = 100;
+        initUIParent.SetActive(false);
         isSigningUp = true;
         inputPanel.SetActive(true);
-        statusText.text = "Create Account";
+        statusText.text = "Create Account:";
     }
 
     public void OpenSignIn()
     {
+        verSelCloseBtn.SetActive(false);
+        detailsText.fontSize = 100;
+        initUIParent.SetActive(false);
         isSigningUp = false;
         inputPanel.SetActive(true);
         statusText.text = "Welcome Back!";
@@ -38,12 +89,16 @@ public class AuthManager : MonoBehaviour
 
     public void GuestLogin()
     {
-        SceneManager.LoadScene("Environment Menu");
+        verSelCloseBtn.SetActive(true);
+        VersionSelectionPanel.SetActive(true);
+        initUIParent.SetActive(false);
     }
 
     public void ClosePanel()
     {
         inputPanel.SetActive(false);
+        VersionSelectionPanel.SetActive(false);
+        initUIParent.SetActive(true);
     }
 
     public async void OnSubmitPressed()
@@ -53,9 +108,10 @@ public class AuthManager : MonoBehaviour
 
         if (string.IsNullOrEmpty(u) || string.IsNullOrEmpty(p))
         {
-            statusText.text = "Error: Fields cannot be empty";
+            detailsText.text = "Fields cannot be empty";
             return;
         }
+    
 
         statusText.text = "Processing...";
 
@@ -65,17 +121,28 @@ public class AuthManager : MonoBehaviour
             {
                 await AuthenticationService.Instance.SignUpWithUsernamePasswordAsync(u, p);
                 SaveLevelData(1);
-                SceneManager.LoadScene("Environment Menu");
+                inputPanel.SetActive(false);
+                VersionSelectionPanel.SetActive(true);
             }
             else
             {
                 await AuthenticationService.Instance.SignInWithUsernamePasswordAsync(u, p);
-                LoadLevelData();
+                inputPanel.SetActive(false);
+                VersionSelectionPanel.SetActive(true);
             }
         }
         catch (System.Exception e)
         {
+            
             statusText.text = "Error: " + e.Message;
+
+            // Display error in DetailsText with font size 40
+            if (detailsText != null)
+            {
+                detailsText.text = e.Message;
+                detailsText.fontSize = 40;
+            }
+    
             Debug.LogError(e.Message);
         }
     }

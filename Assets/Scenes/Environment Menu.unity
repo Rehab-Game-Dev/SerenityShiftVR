@@ -1354,7 +1354,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1045509549}
         m_TargetAssemblyTypeName: MenuLoader, Assembly-CSharp
-        m_MethodName: LoadMainMenuPC
+        m_MethodName: Street
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
