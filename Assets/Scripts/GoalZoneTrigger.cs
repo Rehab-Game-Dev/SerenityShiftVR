@@ -11,7 +11,9 @@ public class GoalZoneTrigger : MonoBehaviour
     public float displayDuration = 5f;
     
     private bool hasTriggered = false;
-
+    private TargetPulse pulseScript;
+    private ParticleSystem particles;
+    
     private void Start()
     {
         // Make sure the message is hidden at start
@@ -23,18 +25,38 @@ public class GoalZoneTrigger : MonoBehaviour
         {
             Debug.LogError("Goal Message is not assigned in GoalZoneTrigger!");
         }
+        
+        // Get references to the pulse script and particle system
+        pulseScript = GetComponent<TargetPulse>();
+        particles = GetComponentInChildren<ParticleSystem>();
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         // Check if player entered the target zone
         if (other.CompareTag("Player") && !hasTriggered)
         {
             hasTriggered = true;
+            StopEffects();
             StartCoroutine(ShowGoalMessage());
         }
     }
-
+    
+    private void StopEffects()
+    {
+        // Stop the pulsing animation
+        if (pulseScript != null)
+        {
+            pulseScript.enabled = false;
+        }
+        
+        // Stop the particle system
+        if (particles != null)
+        {
+            particles.Stop();
+        }
+    }
+    
     private IEnumerator ShowGoalMessage()
     {
         if (goalMessage != null)
@@ -54,9 +76,20 @@ public class GoalZoneTrigger : MonoBehaviour
         }
     }
     
-    // Optional: If you want to manually reset the trigger
+    // Optional: manually reset the trigger
     public void ResetTrigger()
     {
         hasTriggered = false;
+        
+        // Restart effects
+        if (pulseScript != null)
+        {
+            pulseScript.enabled = true;
+        }
+        
+        if (particles != null)
+        {
+            particles.Play();
+        }
     }
 }
