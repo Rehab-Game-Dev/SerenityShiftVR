@@ -4,31 +4,52 @@ using UnityEngine;
 
 public class BirdManager : MonoBehaviour
 {
-    // במקום נקודות ריקות, אנחנו גוררים לפה את הציפורים האמיתיות מהסצנה
     public List<GameObject> birdsInScene; 
-    public int amountToSpawn = 3;
-
+    public int amountToSpawn = 15;
+    public bool activateOnStart = true; // Add this toggle
+    
     void Start()
     {
-        ActivateRandomBirds();
+        // Deactivate all birds first
+        DeactivateAllBirds();
+        
+        // If this flag is true (for medium level), activate birds immediately
+        if (activateOnStart)
+        {
+            ActivateBirds();
+        }
     }
-
+    
+    // GameManager can still call this function (for demo level)
+    public void ActivateBirds()
+    {
+        ActivateRandomBirds();
+        Debug.Log("Birds activated!");
+    }
+    
+    void DeactivateAllBirds()
+    {
+        foreach (GameObject bird in birdsInScene)
+        {
+            if (bird != null)
+            {
+                bird.SetActive(false);
+            }
+        }
+    }
+    
     void ActivateRandomBirds()
     {
-        // מעתיקים לרשימה זמנית כדי לא להוציא את אותה ציפור פעמיים
         List<GameObject> availableBirds = new List<GameObject>(birdsInScene);
-
+        
         for (int i = 0; i < amountToSpawn; i++)
         {
             if (availableBirds.Count == 0) break;
-
-            int randomIndex = Random.Range(0, availableBirds.Count);
             
-            // במקום ליצור - אנחנו פשוט מדליקים את הציפור
+            int randomIndex = Random.Range(0, availableBirds.Count);
             GameObject selectedBird = availableBirds[randomIndex];
             selectedBird.SetActive(true);
-
-            // ומוציאים אותה מהרשימה הזמנית
+            
             availableBirds.RemoveAt(randomIndex);
         }
     }

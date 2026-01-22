@@ -10,16 +10,14 @@ public class BirdCatchable : MonoBehaviour
     
     private void Start()
     {
-        // Get or add AudioSource component
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
         
-        // Configure AudioSource for sound effects
         audioSource.playOnAwake = false;
-        audioSource.spatialBlend = 0f; // 2D sound
+        audioSource.spatialBlend = 0f;
     }
     
     public void CatchBird()
@@ -34,11 +32,17 @@ public class BirdCatchable : MonoBehaviour
             AudioSource.PlayClipAtPoint(catchSound, transform.position);
         }
         
-        // Show the bird caught message
-        if (BirdMessageController.Instance != null)
+        // Try GoalMessageController first (for demo/hybrid levels)
+        if (GoalMessageController.Instance != null)
+        {
+            GoalMessageController.Instance.OnBirdCaught();
+        }
+        // Fall back to BirdMessageController (for medium level)
+        else if (BirdMessageController.Instance != null)
         {
             BirdMessageController.Instance.OnBirdCaught();
         }
+        
         if (BirdGameManager.Instance != null)
         {
             BirdGameManager.Instance.BirdCaught();

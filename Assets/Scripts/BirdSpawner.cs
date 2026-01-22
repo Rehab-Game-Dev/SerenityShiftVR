@@ -10,10 +10,23 @@ public class BirdSpawner : MonoBehaviour
     public float spawnInterval = 5f; // כל כמה שניות תצא ציפור?
     public Vector3 spawnArea = new Vector3(20f, 2f, 20f); // גודל האזור ממנו הן יוצאות
     public float birdLifetime = 20f; // זמן חיים קצת יותר ארוך
+    private bool isSpawning = false; // דגל שמציין אם אנחנו צריכים לייצר ציפורים
 
     void Start()
     {
-        StartCoroutine(SpawnBirds());
+        // לא מתחילים לייצר ציפורים אוטומטית
+        // StartCoroutine(SpawnBirds()); // הסרנו את השורה הזו
+    }
+    
+    // פונקציה חדשה שה-GameManager יקרא לה
+    public void StartSpawning()
+    {
+        if (!isSpawning)
+        {
+            isSpawning = true;
+            StartCoroutine(SpawnBirds());
+            Debug.Log("Bird spawning started!");
+        }
     }
 
     IEnumerator SpawnBirds()
