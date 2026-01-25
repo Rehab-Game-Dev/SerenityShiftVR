@@ -1506,7 +1506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0b0247cdfc0ab4fa0f2167ef685382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuLoader
-  controlsPanel: {fileID: 0}
 --- !u!4 &1045509550
 Transform:
   m_ObjectHideFlags: 0
@@ -2020,11 +2019,11 @@ RectTransform:
   - {fileID: 1012821910}
   m_Father: {fileID: 2083868824}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 860, y: 460}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -50, y: -30}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1787598163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2174,7 +2173,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
