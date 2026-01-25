@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Environment Menu.unity
     guid: a5fcb0a30d3bf724f886360351f9c314
   - enabled: 1
-    path: Assets/Scenes/MainMenu_VR.unity
-    guid: 98d1917a54b103540b2c9cc8b152f62e
+    path: Assets/Scenes/EnvironmentMenu_VR.unity
+    guid: 5769f7235183c534b88f677fb0b13925
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 73141c0b5dfdada4695166fc564f4cb8
+  - enabled: 1
+    path: Assets/Scenes/MainMenu_VR.unity
+    guid: 98d1917a54b103540b2c9cc8b152f62e
   - enabled: 1
     path: Assets/Scenes/StreetScene - tutorial.unity
     guid: a57e157ad33869942a126513a48d1646

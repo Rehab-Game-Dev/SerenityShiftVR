@@ -56,7 +56,7 @@ public class AuthManager : MonoBehaviour
     {
         VR_ON = true;
         Debug.Log("VR Mode selected");
-        SceneManager.LoadScene("Environment Menu");
+        SceneManager.LoadScene("EnvironmentMenu_VR");
     }
 
     public void setVR_false()
