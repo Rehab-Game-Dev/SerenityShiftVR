@@ -1,25 +1,45 @@
-Yarin Keshet
+# SerenityShiftVR
 
-Ori Hemo
+**Team Members:**
+- Yarin Keshet
+- Ori Hemo
 
-Occupational therapy members:
+**Occupational Therapy Consultants:**
+- Nesya Zarbiv
+- Ifat Casovitz
+- Coral Ben Baruch
 
-Coral
+## About
 
-Nesya
+SerenityShift is a simulation game in VR technology that treats anxiety by using controlled daily environments to perform tasks proven and backed up by studies to be useful.
 
-Ifat
+## Links
 
-SerenityShift is a simulation game in VR technology that treats anxiety by using controled daily environemnts to perform tasks proven and bucked up by studies to be useful.
-
-wiki pages:
-
+**Wiki Pages:**  
 https://github.com/Rehab-Game-Dev/SerenityShiftVR/wiki
 
-Itch.io link(Current demo):
+**YouTube Demo:**  
+https://youtu.be/bzBSL8CwUaQ
 
+**Web Demo (itch.io):**  
 https://yarinkash1.itch.io/serenity-shift-vr-alpha-demo-e
 
-Youtube demo:
+## Installation Instructions
 
-https://youtu.be/bzBSL8CwUaQ
+### Windows PC VR Demo
+
+1. **Download** the Windows build from [Google Drive](https://drive.google.com/file/d/1I7XNKsqjvnrWA1FgPt4jCCkKnviiCXs5/view?usp=sharing)
+
+2. Click on the "download" button
+
+3. Click on the "download anyway" button
+
+4. **Extract** the ZIP file to your desired location on your computer
+
+5. **(optional) - Connect your VR headset** to your PC
+
+6. **Run** the `serinity.exe` file from the extracted folder
+
+### System Requirements
+- Windows 11
+- VR Headset(optional)
