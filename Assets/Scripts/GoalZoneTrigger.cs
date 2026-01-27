@@ -6,6 +6,7 @@ public class GoalZoneTrigger : MonoBehaviour
 {
     [Header("UI Reference")]
     public TextMeshProUGUI goalMessage;
+    public GameObject instructionPanel; // Add this
     
     [Header("Settings")]
     public float displayDuration = 5f;
@@ -70,6 +71,13 @@ public class GoalZoneTrigger : MonoBehaviour
             
             // Hide the message
             goalMessage.gameObject.SetActive(false);
+            
+            // Hide the instruction panel
+            if (instructionPanel != null)
+            {
+                instructionPanel.SetActive(false);
+                Debug.Log("Instruction panel hidden");
+            }
             
             // Optional: Reset the trigger if you want it to work multiple times
             // hasTriggered = false;
