@@ -40,7 +40,7 @@ public class NPCSpawner : MonoBehaviour
 
                 GameObject newNPC = Instantiate(selectedPrefab, hit.position, Quaternion.identity);
                 
-                // כאן אנחנו קובעים את הגודל הסופי
+                // determine scale
                 newNPC.transform.localScale = spawnScale; 
                 
                 newNPC.transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);

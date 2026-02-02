@@ -33,14 +33,14 @@ public class NPCWalker : MonoBehaviour
 
     void Update()
     {
-        // לעדכן אנימציה לפי מהירות אמיתית
+        // update animation speed parameter
         if (animator)
         {
             float normalized = agent.speed > 0.01f ? agent.velocity.magnitude / agent.speed : 0f;
             animator.SetFloat(speedParam, normalized, animDamp, Time.deltaTime);
         }
 
-        // להתקדם לנקודה הבאה כשהגענו
+        // Move to the next point when reached
         if (waypoints == null || waypoints.Length == 0) return;
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance + 0.05f)
         {

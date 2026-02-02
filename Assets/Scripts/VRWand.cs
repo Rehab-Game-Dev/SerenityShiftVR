@@ -1,26 +1,26 @@
 using UnityEngine;
-using UnityEngine.XR; // ספרייה חובה לשימוש בבקרים
+using UnityEngine.XR;
 
 public class VRWand : MonoBehaviour
 {
     [Header("Settings")]
-    public XRNode controllerNode = XRNode.RightHand; // איזו יד זו? ימין או שמאל
-    public float range = 100f; // מרחק הקרן
-    public LayerMask birdLayer; // כדי שנפגע רק בציפורים (אופציונלי)
+    public XRNode controllerNode = XRNode.RightHand; // Which hand? Right or Left
+    public float range = 100f; // Ray distance
+    public LayerMask birdLayer; // To hit only birds (optional)
 
     [Header("Visuals")]
-    public GameObject hitEffect; // אפקט פגיעה (אופציונלי)
+    public GameObject hitEffect; // Hit effect (optional)
 
     private bool isTriggerPressed = false;
-    private bool wasPressedLastFrame = false; // כדי למנוע ירי רציף
+    private bool wasPressedLastFrame = false; // To prevent continuous firing
 
     void Update()
     {
-        // 1. בדיקת הקלט מהבקר (האם לחצו על הטריגר?)
+        // 1. Check input from the controller (is the trigger pressed?)
         InputDevice device = InputDevices.GetDeviceAtXRNode(controllerNode);
         device.TryGetFeatureValue(CommonUsages.triggerButton, out isTriggerPressed);
 
-        // אנחנו רוצים שזה יקרה רק ברגע הלחיצה (Down), לא כשהכפתור מוחזק
+        // We want this to happen only on the press moment (Down), not when the button is held
         if (isTriggerPressed && !wasPressedLastFrame)
         {
             ShootRay();
@@ -32,16 +32,16 @@ public class VRWand : MonoBehaviour
     void ShootRay()
     {
         RaycastHit hit;
-        // הקרן יוצאת מהמיקום של האובייקט עליו יושב הסקריפט (היד)
+        // The ray originates from the position of the object this script is attached to (the hand)
         if (Physics.Raycast(transform.position, transform.forward, out hit, range))
         {
-            // בדיקה האם פגענו בציפור
-            // אופציה א: לפי תגית (כמו שעשינו קודם)
+            // Check if we hit a bird
+            // Option A: by tag (like we did before)
             if (hit.transform.CompareTag("Bird")) 
             {
                 CatchBird(hit.transform.gameObject);
             }
-            // אופציה ב: לפי שם (למקרה ששכחת לשים תגית)
+            // Option B: by name (in case you forgot to set the tag)
             else if (hit.transform.name.Contains("cardinal") || hit.transform.name.Contains("Bird"))
             {
                 CatchBird(hit.transform.gameObject);
@@ -53,13 +53,13 @@ public class VRWand : MonoBehaviour
     {
         Debug.Log("תפסתי ציפור! " + bird.name);
         
-        // כאן אפשר להוסיף אפקט לפני המחיקה
+        // create hit effect
         if (hitEffect != null)
         {
             Instantiate(hitEffect, bird.transform.position, Quaternion.identity);
         }
 
-        // השמדת הציפור
+        // destroy the bird
         Destroy(bird);
     }
 }

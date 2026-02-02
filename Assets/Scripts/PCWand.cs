@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class PCWand : MonoBehaviour
 {
-    public float range = 100f; // מרחק תפיסה
-    private bool hasBeenCaught = false; // למנוע ספירה כפולה
+    public float range = 100f; // range of the raycast
+    private bool hasBeenCaught = false; // prevent double counting
 
     void Update()
     {
-        // בדיקה: האם לחצו קליק שמאלי בעכבר?
+        // Check: was the left mouse button clicked?
         if (Input.GetMouseButtonDown(0)) 
         {
             ShootRay();
@@ -18,13 +18,13 @@ public class PCWand : MonoBehaviour
     {
         RaycastHit hit;
         
-        // יצירת קרן שיוצאת מהמצלמה (האובייקט עליו יושב הסקריפט) ישר קדימה
+        // Create a ray that shoots straight forward from the camera (the object this script is attached to)
         if (Physics.Raycast(transform.position, transform.forward, out hit, range))
         {
-            // בדיקה אם פגענו בציפור (לפי התגית שיצרנו קודם)
+            // Check if we hit a bird (by the tag we created earlier)
             if (hit.transform.CompareTag("Bird"))
             {
-                // בדיקה שהציפור לא נתפסה כבר
+                // Check that the bird hasn't been caught already
                 BirdCatchable birdScript = hit.transform.GetComponent<BirdCatchable>();
                 if (birdScript != null && !birdScript.hasBeenCaught)
                 {

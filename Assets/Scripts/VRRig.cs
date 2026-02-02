@@ -22,14 +22,14 @@ public class VRRig : MonoBehaviour
     public VRMap rightHand;
 
     public Transform headConstraint;
-    public Vector3 bodyOffset = new Vector3(0, -1.5f, 0); // מרחק קבוע לגוף (תשחקי עם ה-Y הזה)
+    public Vector3 bodyOffset = new Vector3(0, -1.5f, 0); // constant offset to position the body lower
 
-    void LateUpdate() // שינינו את זה כך שלא יסתמך על Start
+    void LateUpdate() // use LateUpdate to ensure VR targets have updated
     {
-        // הזזת הגוף לפי המצלמה + התיקון הקבוע למטה
+        // Move the body according to the camera + the constant downward offset
         transform.position = head.vrTarget.position + bodyOffset;
 
-        // סיבוב הגוף שיהיה ישר
+        // Rotate the body to be upright
         transform.forward = Vector3.ProjectOnPlane(head.vrTarget.forward, Vector3.up).normalized;
 
         head.Map();

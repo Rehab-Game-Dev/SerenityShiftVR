@@ -23,7 +23,7 @@ public class UIMessage : MonoBehaviour
         if (msg != null && messageText != null)
             messageText.text = msg;
 
-        Debug.Log("ShowMessage Called");  // בדיקה שהפונקציה מופעלת
+        Debug.Log("ShowMessage Called");  // a debug log to confirm method call
 
         StopAllCoroutines();
         StartCoroutine(MessageRoutine());
@@ -45,7 +45,7 @@ public class UIMessage : MonoBehaviour
 
         Debug.Log("Shown. Waiting...");
 
-        // מחכים X שניות
+        // wait for show time
         yield return new WaitForSeconds(showTime);
 
         Debug.Log("Start Fade OUT");

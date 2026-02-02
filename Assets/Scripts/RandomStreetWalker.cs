@@ -5,12 +5,12 @@ using UnityEngine.AI;
 public class RandomStreetWalker : MonoBehaviour
 {
     [Header("Settings")]
-    public float walkRadius = 20f; // כמה רחוק הוא יכול ללכת מהנקודה הנוכחית
-    public float waitTime = 3f;    // כמה זמן לחכות כשהוא מגיע ליעד לפני שממשיך
+    public float walkRadius = 20f; // how far it can walk from the current point
+    public float waitTime = 3f;    // how long to wait when it reaches the destination before continuing
 
     [Header("Animation")]
     public Animator animator;
-    public string speedParam = "speed"; // השם של הפרמטר באנימטור שלך
+    public string speedParam = "speed"; // the name of the parameter in your Animator
 
     private NavMeshAgent agent;
     private float timer;
@@ -20,24 +20,24 @@ public class RandomStreetWalker : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         if (animator == null) animator = GetComponent<Animator>();
         
-        // מתחיל את הטיימר כדי שיתחיל ללכת מיד
+        // Start the timer so it begins walking immediately
         timer = waitTime;
     }
 
     void Update()
     {
-        // 1. טיפול באנימציה (עמידה מול הליכה)
-        // מעביר את המהירות לאנימטור כדי שידע מתי לנגן Walk ומתי Idle
+        // 1. Handle animation (Idle vs Walk)
+        // Send the speed to the Animator so it knows when to play Walk and when to play Idle
         if (animator != null)
         {
             float speed = agent.velocity.magnitude;
             animator.SetFloat(speedParam, speed);
         }
 
-        // 2. טיפול בתנועה הרנדומלית
+        // 2. Handle random movement
         timer += Time.deltaTime;
 
-        // אם עבר זמן ההמתנה + הדמות הגיעה ליעד (או אין לה יעד)
+        // if wait time has passed + the character reached the destination (or has no destination)
         if (timer >= waitTime && (!agent.hasPath || agent.remainingDistance < 0.5f))
         {
             Vector3 newPos = RandomNavSphere(transform.position, walkRadius, -1);
@@ -46,7 +46,7 @@ public class RandomStreetWalker : MonoBehaviour
         }
     }
 
-    // פונקציה למציאת נקודה חוקית על ה-NavMesh (המשטח הכחול)
+    // navmesh random position generator
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
     {
         Vector3 randDirection = Random.insideUnitSphere * dist;

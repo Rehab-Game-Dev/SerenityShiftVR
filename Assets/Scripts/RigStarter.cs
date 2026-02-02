@@ -1,22 +1,22 @@
 using UnityEngine;
-using UnityEngine.Animations.Rigging; // חובה בשביל התיקון
+using UnityEngine.Animations.Rigging;
 
 public class RigStarter : MonoBehaviour
 {
     void Start()
     {
-        // אנחנו נותנים למערכת חלקיק שנייה לנשום, ואז מפעילים מחדש
+        // We give the system a fraction of a second to breathe, then restart
         Invoke("RestartRig", 0.1f);
     }
 
     void RestartRig()
     {
-        // מציאת הרכיב
+        // Find the component
         RigBuilder rigBuilder = GetComponent<RigBuilder>();
         
         if (rigBuilder != null)
         {
-            // הפקודה הזו בונה מחדש את הקשרים ומעלימה את השגיאות
+            // This command rebuilds the connections and removes errors
             rigBuilder.Build(); 
         }
     }

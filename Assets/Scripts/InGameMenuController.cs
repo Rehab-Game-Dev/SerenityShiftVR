@@ -3,25 +3,25 @@ using UnityEngine.InputSystem;
 
 public class InGameMenuController : MonoBehaviour
 {
-    public GameObject menuObject; // גרור לכאן את Interactive Controls
-    public InputActionReference menuButtonAction; // הפניה לכפתור השלט
+    public GameObject menuObject; 
+    public InputActionReference menuButtonAction; // reference to the controller button
 
     void OnEnable() {
-        // הרשמה לאירוע הלחיצה
+        // Register for the button press event
         menuButtonAction.action.performed += ToggleMenu;
     }
 
     void OnDisable() {
-        // הסרת הרשמה למניעת שגיאות
+        // Unregister to prevent errors
         menuButtonAction.action.performed -= ToggleMenu;
     }
 
     void ToggleMenu(InputAction.CallbackContext context) {
-        // הפיכת מצב התצוגה (אם דולק - כבה, אם כבוי - הדלק)
+        // Toggle the display state (if on - turn off, if off - turn on)
         bool isActive = !menuObject.activeSelf;
         menuObject.SetActive(isActive);
         
-        // בונוס: מיקום התפריט מול השחקן כשהוא נפתח
+        // Bonus: position the menu in front of the player when it opens
         if(isActive) {
             menuObject.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 1.5f;
             menuObject.transform.LookAt(Camera.main.transform);

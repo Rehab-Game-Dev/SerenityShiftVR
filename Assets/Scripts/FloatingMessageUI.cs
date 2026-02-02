@@ -4,14 +4,13 @@ using TMPro;
 public class FloatingMessageUI : MonoBehaviour
 {
     [Header("References")]
-    public Transform targetCamera;          // ה-Camera של ה-PC או ה-XR
-    public TextMeshProUGUI messageText;     // ה-TMP בתוך הקנבס
-    public CanvasGroup canvasGroup;         // על הקנבס
+    public Transform targetCamera;          // is the camera of the user or the scene?
+    public TextMeshProUGUI messageText;     // the TMP inside the canvas
+    public CanvasGroup canvasGroup;         // on the canvas
 
     [Header("Placement")]
-    public float distance = 1.5f;           // כמה מטרים מול המשתמש
-    public Vector3 offset = new Vector3(0f, -0.15f, 0f); // קצת מתחת למרכז
-
+    public float distance = 1.5f;           // how many meters in front of the user
+    public Vector3 offset = new Vector3(0f, -0.15f, 0f); // slightly below the center
     [Header("Fade")]
     public float fadeSpeed = 8f;
 
@@ -27,11 +26,11 @@ public class FloatingMessageUI : MonoBehaviour
     {
         if (!targetCamera) return;
 
-        // מיקום מול המצלמה
+        // Position in front of the camera
         transform.position = targetCamera.position + targetCamera.forward * distance + targetCamera.TransformVector(offset);
 
-        // שהקנבס יפנה למצלמה
-        Vector3 lookDir = targetCamera.position - transform.position; // <-- הפוך
+        // Make the canvas face the camera
+        Vector3 lookDir = targetCamera.position - transform.position; // <-- reversed
         transform.rotation = Quaternion.LookRotation(lookDir);
 
 

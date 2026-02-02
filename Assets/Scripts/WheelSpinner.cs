@@ -3,11 +3,11 @@ using UnityEngine.AI;
 
 public class WheelSpinner : MonoBehaviour
 {
-    [Header("גררי לכאן את 4 הגלגלים מההיררכיה")]
-    public Transform[] wheels; // רשימה של הגלגלים
+    [Header("Drag the 4 wheels from the hierarchy here")]
+    public Transform[] wheels; // list of wheel transforms to spin
     
-    [Header("הגדרות")]
-    public float spinSpeed = 100f; // כמה מהר לסובב
+    [Header("Settings")]
+    public float spinSpeed = 100f; // how fast to spin
 
     private NavMeshAgent agent;
 
@@ -18,18 +18,18 @@ public class WheelSpinner : MonoBehaviour
 
     void Update()
     {
-        // אם למכונית יש מהירות (היא זזה)
+        // only spin the wheels if the agent is moving
         if (agent != null && agent.velocity.magnitude > 0.1f)
         {
-            // חשב את מהירות הסיבוב לפי מהירות הנסיעה
+            // calculate the spin speed based on the driving speed
             float currentSpeed = agent.velocity.magnitude * spinSpeed * Time.deltaTime;
 
-            // עבור על כל הגלגלים ברשימה וסובב אותם
+            // iterate over all wheels in the list and rotate them
             foreach (Transform wheel in wheels)
             {
                 if (wheel != null)
                 {
-                    // מסובב על ציר ה-X (קדימה/אחורה)
+                    // rotate around the X axis (forward/backward)
                     wheel.Rotate(Vector3.right * currentSpeed);
                 }
             }

@@ -3,21 +3,20 @@ using System.Collections;
 
 public class BirdSpawner : MonoBehaviour
 {
-    [Header("הגדרות")]
-    // שינינו את זה לרשימה (סוגריים מרובעים)
+    [Header("Settings")]
     public GameObject[] birdPrefabs; 
     
-    public float spawnInterval = 5f; // כל כמה שניות תצא ציפור?
-    public Vector3 spawnArea = new Vector3(20f, 2f, 20f); // גודל האזור ממנו הן יוצאות
-    public float birdLifetime = 20f; // זמן חיים קצת יותר ארוך
-    private bool isSpawning = false; // דגל שמציין אם אנחנו צריכים לייצר ציפורים
+    public float spawnInterval = 5f; // How often to spawn a bird?
+    public Vector3 spawnArea = new Vector3(20f, 2f, 20f); // Size of the area from which birds spawn
+    public float birdLifetime = 20f; // How long before a bird is destroyed
+    private bool isSpawning = false; // Flag indicating whether we should spawn birds
 
     void Start()
     {
         StartCoroutine(SpawnBirds());
     }
     
-    // פונקציה חדשה שה-GameManager יקרא לה
+    // Call this method to start spawning birds
     public void StartSpawning()
     {
         if (!isSpawning)
@@ -33,34 +32,34 @@ public class BirdSpawner : MonoBehaviour
         while (true)
         {
             SpawnRandomBird();
-            // מחכה זמן אקראי כדי שזה ירגיש טבעי
+            // Wait for a random time to make it feel natural
             yield return new WaitForSeconds(spawnInterval + Random.Range(0f, 3f));
         }
     }
 
     void SpawnRandomBird()
     {
-        // בדיקת בטיחות: אם אין ציפורים ברשימה, אל תעשה כלום
+        // safety check to avoid errors (no bird prefabs assigned)
         if (birdPrefabs.Length == 0) return;
 
-        // 1. הגרלת מיקום
+        // 1. Randomize position
         Vector3 randomPos = transform.position + new Vector3(
             Random.Range(-spawnArea.x, spawnArea.x),
             Random.Range(-spawnArea.y, spawnArea.y),
             Random.Range(-spawnArea.z, spawnArea.z)
         );
 
-        // 2. הגרלת כיוון (סיבוב)
+        // 2. Randomize rotation (direction)
         Quaternion randomRot = Quaternion.Euler(0, Random.Range(0, 360), 0);
 
-        // 3. בחירת ציפור אקראית מתוך הרשימה
+        // 3. Randomly select a bird from the list
         int randomIndex = Random.Range(0, birdPrefabs.Length);
         GameObject selectedBird = birdPrefabs[randomIndex];
 
-        // 4. יצירת הציפור
+        // 4. Instantiate the bird
         GameObject newBird = Instantiate(selectedBird, randomPos, randomRot);
 
-        // 5. מחיקה אוטומטית אחרי X שניות
+        // 5. Automatically destroy after X seconds
         Destroy(newBird, birdLifetime);
     }
 

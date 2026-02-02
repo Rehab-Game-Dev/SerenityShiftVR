@@ -4,7 +4,7 @@ public class VRAnimatorController : MonoBehaviour
 {
     private Animator animator;
     private Vector3 previousPos;
-    public float speedThreshold = 0.1f; // סף רגישות לתזוזה
+    public float speedThreshold = 0.1f; // threshold to consider as "moving"
 
     void Start()
     {
@@ -14,17 +14,17 @@ public class VRAnimatorController : MonoBehaviour
 
     void Update()
     {
-        // 1. חישוב המהירות של הדמות
-        // אנחנו בודקים כמה מרחק עברנו מאז הפריים הקודם
+        // 1. Calculate the character's speed
+        // We check how much distance we've covered since the last frame
         Vector3 velocity = (transform.position - previousPos) / Time.deltaTime;
         
-        // אנחנו מתעלמים מתזוזה לגובה (קפיצות/ירידות) ומתמקדים רק בהליכה
+        // We ignore vertical movement (jumps/falls) and focus only on walking
         velocity.y = 0;
         
         float currentSpeed = velocity.magnitude;
 
-        // 2. שליחת המהירות לאנימטור
-        // השם "speed" חייב להיות זהה למה שכתוב בתוך ה-Animator
+        // 2. Send the speed to the Animator
+        // The name "speed" must match what is written inside the Animator
         animator.SetFloat("speed", currentSpeed);
 
         previousPos = transform.position;
