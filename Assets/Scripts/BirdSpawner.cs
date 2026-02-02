@@ -14,8 +14,7 @@ public class BirdSpawner : MonoBehaviour
 
     void Start()
     {
-        // לא מתחילים לייצר ציפורים אוטומטית
-        // StartCoroutine(SpawnBirds()); // הסרנו את השורה הזו
+        StartCoroutine(SpawnBirds());
     }
     
     // פונקציה חדשה שה-GameManager יקרא לה
