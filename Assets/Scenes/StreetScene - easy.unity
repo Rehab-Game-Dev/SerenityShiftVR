@@ -89382,7 +89382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 617305381}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198412,7 +198412,7 @@ GameObject:
   - component: {fileID: 1381390786}
   - component: {fileID: 1381390788}
   - component: {fileID: 1381390787}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Target_Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268999,7 +268999,7 @@ GameObject:
   - component: {fileID: 1874066444}
   - component: {fileID: 1874066446}
   - component: {fileID: 1874066445}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Target_Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277479,7 +277479,7 @@ GameObject:
   - component: {fileID: 1905213375}
   - component: {fileID: 1905213377}
   - component: {fileID: 1905213376}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Target_Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
