@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 03d76cf6d5fd8f14da04d15ae2eeeae8
+timeCreated: 1474350670
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/ModularWallStructures/StreetWall_CornerCurved.prefab
+  uploadId: 292189

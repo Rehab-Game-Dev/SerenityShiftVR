@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ac8ed710934a3564686a096bb351caee
+timeCreated: 1465484939
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/PostProcessing/Resources/Shaders/DepthOfField.shader
+  uploadId: 292189

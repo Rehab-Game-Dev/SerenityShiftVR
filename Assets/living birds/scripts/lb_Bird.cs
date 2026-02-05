@@ -373,15 +373,7 @@ public class lb_Bird : MonoBehaviour {
 				}else if (rand < .6){
 					DisplayBehavior(birdBehaviors.preen);	
 				}else if (!perched && rand<.7){
-					DisplayBehavior(birdBehaviors.ruffle);	
-				}else if (!perched && rand <.85){
-					DisplayBehavior(birdBehaviors.hopForward);	
-				}else if (!perched && rand < .9){
-					DisplayBehavior(birdBehaviors.hopLeft);	
-				}else if (!perched && rand <.95){
-					DisplayBehavior(birdBehaviors.hopRight);
-				}else if (!perched && rand <= 1){
-					DisplayBehavior(birdBehaviors.hopBackward);	
+					DisplayBehavior(birdBehaviors.ruffle);
 				}else{
 					DisplayBehavior(birdBehaviors.sing);	
 				}

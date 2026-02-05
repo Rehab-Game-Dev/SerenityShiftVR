@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8f9e6b3439e16284d89085d18bacc3bd
+timeCreated: 1474351015
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/RoadTiles/TownFloorRed.prefab
+  uploadId: 292189

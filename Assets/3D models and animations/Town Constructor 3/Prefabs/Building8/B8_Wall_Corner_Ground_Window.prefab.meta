@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 05f7ebc6aced4a34b9802f3e9955af87
+timeCreated: 1474348978
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/Building8/B8_Wall_Corner_Ground_Window.prefab
+  uploadId: 292189

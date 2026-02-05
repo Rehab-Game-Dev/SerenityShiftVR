@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 60880a462c94ce44da443d707dd09580
+timeCreated: 1474341841
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/Building1/B1_InnerFloor_LeftRight.prefab
+  uploadId: 292189

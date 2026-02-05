@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1d8bc8fa0f320af4d8c8cf946a864963
+timeCreated: 1474350673
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/ModularWallStructures/StreetWall_Corner.prefab
+  uploadId: 292189

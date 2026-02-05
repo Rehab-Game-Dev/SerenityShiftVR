@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cb0fd6f70023b7d42a2ee4e7a3519286
+timeCreated: 1471814192
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/PropPrefabs/Busstope_LOD.prefab
+  uploadId: 292189

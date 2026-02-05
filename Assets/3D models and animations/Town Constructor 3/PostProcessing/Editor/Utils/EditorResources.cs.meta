@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: a66d7b0165140a1439be89b5afc000fb
+timeCreated: 1476177015
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/PostProcessing/Editor/Utils/EditorResources.cs
+  uploadId: 292189

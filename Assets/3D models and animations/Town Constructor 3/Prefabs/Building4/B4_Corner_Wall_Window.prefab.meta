@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4f15c4e0635bd414abe55de947c62baf
+timeCreated: 1474345864
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/Building4/B4_Corner_Wall_Window.prefab
+  uploadId: 292189

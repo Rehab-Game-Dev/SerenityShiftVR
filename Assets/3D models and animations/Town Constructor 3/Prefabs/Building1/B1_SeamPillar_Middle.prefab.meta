@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a32694f3736c48b42b1c2d501086c33b
+timeCreated: 1474342461
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/Building1/B1_SeamPillar_Middle.prefab
+  uploadId: 292189

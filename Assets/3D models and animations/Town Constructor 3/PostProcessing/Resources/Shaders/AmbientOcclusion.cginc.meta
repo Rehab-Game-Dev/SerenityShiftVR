@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 447591ee3d9d4204899be5fe25968ea0
+timeCreated: 1473323470
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/PostProcessing/Resources/Shaders/AmbientOcclusion.cginc
+  uploadId: 292189
