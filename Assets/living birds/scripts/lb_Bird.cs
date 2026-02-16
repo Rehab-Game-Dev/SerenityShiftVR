@@ -443,10 +443,10 @@ public class lb_Bird : MonoBehaviour {
 	}
 	
 	void FlyAway(){
-		if(!dead){
+		if(!dead && controller != null){
 			StopCoroutine("FlyToTarget");
 			anim.SetBool(landingBoolHash, false);
-			controller.SendMessage ("BirdFindTarget",gameObject);
+			controller.SendMessage("BirdFindTarget", gameObject);
 		}
 	}
 
@@ -523,8 +523,10 @@ public class lb_Bird : MonoBehaviour {
 			perched = false;
 			GetComponent<Rigidbody>().isKinematic = false;
 			GetComponent<Rigidbody>().useGravity = false;
-			anim.Play (idleAnimationHash);
-			controller.SendMessage ("BirdFindTarget",gameObject);
+			anim.Play(idleAnimationHash);
+			if (controller != null) {
+				controller.SendMessage("BirdFindTarget", gameObject);
+			}
 		}
 	}
 

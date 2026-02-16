@@ -26,10 +26,14 @@ public class BirdCatchable : MonoBehaviour
         
         hasBeenCaught = true;
         
-        // Play catch sound
+        // Play catch sound at player position
         if (catchSound != null)
         {
-            AudioSource.PlayClipAtPoint(catchSound, transform.position);
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                AudioSource.PlayClipAtPoint(catchSound, player.transform.position);
+            }
         }
         
         // Try GoalMessageController first (for demo/hybrid levels)
