@@ -1231,11 +1231,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1250,6 +1254,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 757751976}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 757751984}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!1001 &12922175
 PrefabInstance:
@@ -11450,11 +11457,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11469,6 +11480,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1315698361}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1315698369}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!1001 &98008840
 PrefabInstance:
@@ -19886,11 +19900,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19905,6 +19923,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1453100674}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1453100682}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!1001 &166015260
 PrefabInstance:
@@ -20318,6 +20339,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCatchable
   hasBeenCaught: 0
   catchSound: {fileID: 8300000, guid: 133db80cdf8dc8f4f8976d80795fe76e, type: 3}
+--- !u!114 &167349254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167349244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!114 &167418726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32081,11 +32116,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32100,6 +32139,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2144939721}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2144939729}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!1001 &261641988
 PrefabInstance:
@@ -70325,12 +70367,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1663779642}
-  - {fileID: 1763842893}
-  - {fileID: 1933797929}
-  - {fileID: 1416880775}
-  - {fileID: 905440904}
-  - {fileID: 1616860313}
+  - {fileID: 1663916517}
+  - {fileID: 1763967376}
+  - {fileID: 1933930708}
+  - {fileID: 1417017434}
+  - {fileID: 905049179}
+  - {fileID: 1616465478}
   m_Father: {fileID: 30496778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &476007927
@@ -81202,11 +81244,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -81221,6 +81267,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1176535325}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1176535333}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!4 &554711223 stripped
 Transform:
@@ -81919,11 +81968,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -81938,6 +81991,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1891075720}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1891075728}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!1001 &560884651
 PrefabInstance:
@@ -91245,11 +91301,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -91264,6 +91324,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1018321883}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1018321891}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!114 &626862770
 MonoBehaviour:
@@ -111965,6 +112028,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCatchable
   hasBeenCaught: 0
   catchSound: {fileID: 8300000, guid: 133db80cdf8dc8f4f8976d80795fe76e, type: 3}
+--- !u!114 &757751984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757751974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!1001 &758037409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140081,6 +140158,30 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!4 &905049179 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400092, guid: 91da67b32e5c13648a459e093ac1acb6, type: 3}
+  m_PrefabInstance: {fileID: 905440903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &905341051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100092, guid: 91da67b32e5c13648a459e093ac1acb6, type: 3}
+  m_PrefabInstance: {fileID: 905440903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &905341052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905341051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a561212fb8af94ca1dc7c2ec326922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParkBirdAudio
+  song1: {fileID: 8300000, guid: a2c080251f6238942b88f8fb392b20ee, type: 3}
+  song2: {fileID: 8300000, guid: 5c959748375d8b94a8a0c18cdfd02c9f, type: 3}
 --- !u!1001 &905431695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140205,7 +140306,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 91da67b32e5c13648a459e093ac1acb6, type: 3}
       propertyPath: m_Volume
-      value: 0.3
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 91da67b32e5c13648a459e093ac1acb6, type: 3}
+      propertyPath: MaxDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 91da67b32e5c13648a459e093ac1acb6, type: 3}
+      propertyPath: MinDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 91da67b32e5c13648a459e093ac1acb6, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 91da67b32e5c13648a459e093ac1acb6, type: 3}
       propertyPath: m_ApplyRootMotion
@@ -140218,13 +140331,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 91da67b32e5c13648a459e093ac1acb6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 905341052}
   m_SourcePrefab: {fileID: 100100000, guid: 91da67b32e5c13648a459e093ac1acb6, type: 3}
---- !u!4 &905440904 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400092, guid: 91da67b32e5c13648a459e093ac1acb6, type: 3}
-  m_PrefabInstance: {fileID: 905440903}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &905791706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173468,6 +173579,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCatchable
   hasBeenCaught: 0
   catchSound: {fileID: 8300000, guid: 133db80cdf8dc8f4f8976d80795fe76e, type: 3}
+--- !u!114 &1018321891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018321881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!114 &1018565427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176912,11 +177037,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -176931,6 +177060,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1045910132}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1045910140}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!4 &1045910130 stripped
 Transform:
@@ -177028,6 +177160,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCatchable
   hasBeenCaught: 0
   catchSound: {fileID: 8300000, guid: 133db80cdf8dc8f4f8976d80795fe76e, type: 3}
+--- !u!114 &1045910140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045910131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!1001 &1046006638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -177795,6 +177941,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCatchable
   hasBeenCaught: 0
   catchSound: {fileID: 8300000, guid: 133db80cdf8dc8f4f8976d80795fe76e, type: 3}
+--- !u!114 &1048987145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048987135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!114 &1049115138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181460,11 +181620,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -181479,6 +181643,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 167349246}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 167349254}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!114 &1075390324
 MonoBehaviour:
@@ -199086,6 +199253,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCatchable
   hasBeenCaught: 0
   catchSound: {fileID: 8300000, guid: 133db80cdf8dc8f4f8976d80795fe76e, type: 3}
+--- !u!114 &1176535333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176535323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!1 &1176628652 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 34027f604249b9c46a5b5d539ec6de0b, type: 3}
@@ -202137,11 +202318,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -202156,6 +202341,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1353251671}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1353251686}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!1001 &1197778698
 PrefabInstance:
@@ -223804,6 +223992,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCatchable
   hasBeenCaught: 0
   catchSound: {fileID: 8300000, guid: 133db80cdf8dc8f4f8976d80795fe76e, type: 3}
+--- !u!114 &1315698369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315698359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!114 &1315751681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228514,6 +228716,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCatchable
   hasBeenCaught: 0
   catchSound: {fileID: 8300000, guid: 133db80cdf8dc8f4f8976d80795fe76e, type: 3}
+--- !u!114 &1346446023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346446013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!114 &1346611388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229073,6 +229289,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
   m_PrefabInstance: {fileID: 1195294182}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1353251686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353251670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!114 &1353460681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235917,6 +236147,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCatchable
   hasBeenCaught: 0
   catchSound: {fileID: 8300000, guid: 133db80cdf8dc8f4f8976d80795fe76e, type: 3}
+--- !u!114 &1383293553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383293543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!114 &1383389389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239891,6 +240135,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 97201a5671378f848bb305dce5a1ae98, type: 3}
   m_PrefabInstance: {fileID: 1416674328}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1416782970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100092, guid: 40ba60a1fcd52884f8878990bd8dd37e, type: 3}
+  m_PrefabInstance: {fileID: 1416880774}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1416880774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -239957,7 +240206,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 40ba60a1fcd52884f8878990bd8dd37e, type: 3}
       propertyPath: m_Volume
-      value: 0.3
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 40ba60a1fcd52884f8878990bd8dd37e, type: 3}
+      propertyPath: MaxDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 40ba60a1fcd52884f8878990bd8dd37e, type: 3}
+      propertyPath: MinDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 40ba60a1fcd52884f8878990bd8dd37e, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 40ba60a1fcd52884f8878990bd8dd37e, type: 3}
       propertyPath: m_ApplyRootMotion
@@ -239970,9 +240231,12 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 40ba60a1fcd52884f8878990bd8dd37e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1424168935}
   m_SourcePrefab: {fileID: 100100000, guid: 40ba60a1fcd52884f8878990bd8dd37e, type: 3}
---- !u!4 &1416880775 stripped
+--- !u!4 &1417017434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400092, guid: 40ba60a1fcd52884f8878990bd8dd37e, type: 3}
   m_PrefabInstance: {fileID: 1416880774}
@@ -240623,6 +240887,20 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!114 &1424168935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416782970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a561212fb8af94ca1dc7c2ec326922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParkBirdAudio
+  song1: {fileID: 8300000, guid: d261fcef075d71040aaa5ec709db8012, type: 3}
+  song2: {fileID: 8300000, guid: cb56b2933741ce44287d80a49e94a1cc, type: 3}
 --- !u!1001 &1425540129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -242942,6 +243220,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCatchable
   hasBeenCaught: 0
   catchSound: {fileID: 8300000, guid: 133db80cdf8dc8f4f8976d80795fe76e, type: 3}
+--- !u!114 &1453100682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453100672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!1 &1453867948
 GameObject:
   m_ObjectHideFlags: 0
@@ -243244,6 +243536,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCatchable
   hasBeenCaught: 0
   catchSound: {fileID: 8300000, guid: 133db80cdf8dc8f4f8976d80795fe76e, type: 3}
+--- !u!114 &1454347503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454347493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!1001 &1455217711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256297,11 +256603,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -256316,6 +256626,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1048987137}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1048987145}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!114 &1518751027
 MonoBehaviour:
@@ -272391,6 +272704,11 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!4 &1616465478 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400094, guid: ade6a9cba6f7bc242b5cc6c1b8769677, type: 3}
+  m_PrefabInstance: {fileID: 1616860312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1616521583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -272465,6 +272783,11 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!1 &1616826982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100094, guid: ade6a9cba6f7bc242b5cc6c1b8769677, type: 3}
+  m_PrefabInstance: {fileID: 1616860312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1616860312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -272535,7 +272858,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: ade6a9cba6f7bc242b5cc6c1b8769677, type: 3}
       propertyPath: m_Volume
-      value: 0.3
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: ade6a9cba6f7bc242b5cc6c1b8769677, type: 3}
+      propertyPath: MaxDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: ade6a9cba6f7bc242b5cc6c1b8769677, type: 3}
+      propertyPath: MinDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: ade6a9cba6f7bc242b5cc6c1b8769677, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: ade6a9cba6f7bc242b5cc6c1b8769677, type: 3}
       propertyPath: m_ApplyRootMotion
@@ -272548,13 +272883,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100094, guid: ade6a9cba6f7bc242b5cc6c1b8769677, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1626515417}
   m_SourcePrefab: {fileID: 100100000, guid: ade6a9cba6f7bc242b5cc6c1b8769677, type: 3}
---- !u!4 &1616860313 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400094, guid: ade6a9cba6f7bc242b5cc6c1b8769677, type: 3}
-  m_PrefabInstance: {fileID: 1616860312}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1617255564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -273988,6 +274321,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 97201a5671378f848bb305dce5a1ae98, type: 3}
   m_PrefabInstance: {fileID: 1625302101}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1626515417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616826982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a561212fb8af94ca1dc7c2ec326922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParkBirdAudio
+  song1: {fileID: 8300000, guid: ba9e76e40d5f827458e3d17460e6232c, type: 3}
+  song2: {fileID: 8300000, guid: cdd2bf3db646249429213541df377729, type: 3}
 --- !u!1001 &1627540038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -278541,6 +278888,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000011627553072, guid: bc52a2a3cea9d454e9bd93f98887ea9d, type: 3}
   m_PrefabInstance: {fileID: 1663627036}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1663747525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100092, guid: 040770b1b5d24ef48be3b2b48353c1ff, type: 3}
+  m_PrefabInstance: {fileID: 1663779641}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1663779641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -278607,7 +278959,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 040770b1b5d24ef48be3b2b48353c1ff, type: 3}
       propertyPath: m_Volume
-      value: 0.3
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 040770b1b5d24ef48be3b2b48353c1ff, type: 3}
+      propertyPath: MaxDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 040770b1b5d24ef48be3b2b48353c1ff, type: 3}
+      propertyPath: MinDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 040770b1b5d24ef48be3b2b48353c1ff, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 040770b1b5d24ef48be3b2b48353c1ff, type: 3}
       propertyPath: m_ApplyRootMotion
@@ -278620,13 +278984,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 040770b1b5d24ef48be3b2b48353c1ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1676066138}
   m_SourcePrefab: {fileID: 100100000, guid: 040770b1b5d24ef48be3b2b48353c1ff, type: 3}
---- !u!4 &1663779642 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400092, guid: 040770b1b5d24ef48be3b2b48353c1ff, type: 3}
-  m_PrefabInstance: {fileID: 1663779641}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1663840383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278667,6 +279029,11 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!4 &1663916517 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400092, guid: 040770b1b5d24ef48be3b2b48353c1ff, type: 3}
+  m_PrefabInstance: {fileID: 1663779641}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1664073836
 GameObject:
   m_ObjectHideFlags: 0
@@ -280318,6 +280685,20 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!114 &1676066138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663747525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a561212fb8af94ca1dc7c2ec326922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParkBirdAudio
+  song1: {fileID: 8300000, guid: e868c18d4e0b5ab45af52645c6680844, type: 3}
+  song2: {fileID: 8300000, guid: e6209958387973947b669517c6c76460, type: 3}
 --- !u!1001 &1676559098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -281015,11 +281396,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -281034,6 +281419,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1680121696}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1680121704}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!4 &1680121694 stripped
 Transform:
@@ -281131,6 +281519,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCatchable
   hasBeenCaught: 0
   catchSound: {fileID: 8300000, guid: 133db80cdf8dc8f4f8976d80795fe76e, type: 3}
+--- !u!114 &1680121704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680121695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!114 &1680802985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288322,11 +288724,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -288341,6 +288747,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1454347495}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1454347503}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!114 &1741525297
 MonoBehaviour:
@@ -291822,7 +292231,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 7d394b5ffd1a15943aae17fcdd87bea9, type: 3}
       propertyPath: m_Volume
-      value: 0.3
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 7d394b5ffd1a15943aae17fcdd87bea9, type: 3}
+      propertyPath: MaxDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 7d394b5ffd1a15943aae17fcdd87bea9, type: 3}
+      propertyPath: MinDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 7d394b5ffd1a15943aae17fcdd87bea9, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 7d394b5ffd1a15943aae17fcdd87bea9, type: 3}
       propertyPath: m_ApplyRootMotion
@@ -291835,13 +292256,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 7d394b5ffd1a15943aae17fcdd87bea9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1777329453}
   m_SourcePrefab: {fileID: 100100000, guid: 7d394b5ffd1a15943aae17fcdd87bea9, type: 3}
---- !u!4 &1763842893 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400092, guid: 7d394b5ffd1a15943aae17fcdd87bea9, type: 3}
-  m_PrefabInstance: {fileID: 1763842892}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1763900752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291919,6 +292338,16 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 3020217c18c3b464e845700fc742b923, type: 3}
   m_PrefabInstance: {fileID: 1763926096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1763941808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100092, guid: 7d394b5ffd1a15943aae17fcdd87bea9, type: 3}
+  m_PrefabInstance: {fileID: 1763842892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1763967376 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400092, guid: 7d394b5ffd1a15943aae17fcdd87bea9, type: 3}
+  m_PrefabInstance: {fileID: 1763842892}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1764449619
 MonoBehaviour:
@@ -292985,6 +293414,20 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!114 &1777329453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763941808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a561212fb8af94ca1dc7c2ec326922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParkBirdAudio
+  song1: {fileID: 8300000, guid: fce07fb9ee1c4e8469eb3dd0106a9214, type: 3}
+  song2: {fileID: 8300000, guid: caa203e8241140740b1aa36136e06c7c, type: 3}
 --- !u!1001 &1777701580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -311624,6 +312067,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCatchable
   hasBeenCaught: 0
   catchSound: {fileID: 8300000, guid: 133db80cdf8dc8f4f8976d80795fe76e, type: 3}
+--- !u!114 &1891075728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891075718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!1 &1891429505
 GameObject:
   m_ObjectHideFlags: 0
@@ -327208,6 +327665,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b1e24ce5f14d61c4c8012c8b6e5a199e, type: 3}
   m_PrefabInstance: {fileID: 1933207564}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1933765940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100124, guid: 459aeb780b3c43748b5a2bb13e1809c8, type: 3}
+  m_PrefabInstance: {fileID: 1933797928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1933797928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -327278,7 +327740,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 459aeb780b3c43748b5a2bb13e1809c8, type: 3}
       propertyPath: m_Volume
-      value: 0.3
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 459aeb780b3c43748b5a2bb13e1809c8, type: 3}
+      propertyPath: MaxDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 459aeb780b3c43748b5a2bb13e1809c8, type: 3}
+      propertyPath: MinDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 459aeb780b3c43748b5a2bb13e1809c8, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 459aeb780b3c43748b5a2bb13e1809c8, type: 3}
       propertyPath: m_Enabled
@@ -327287,9 +327761,12 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100124, guid: 459aeb780b3c43748b5a2bb13e1809c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1945016681}
   m_SourcePrefab: {fileID: 100100000, guid: 459aeb780b3c43748b5a2bb13e1809c8, type: 3}
---- !u!4 &1933797929 stripped
+--- !u!4 &1933930708 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400124, guid: 459aeb780b3c43748b5a2bb13e1809c8, type: 3}
   m_PrefabInstance: {fileID: 1933797928}
@@ -328582,6 +329059,20 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!114 &1945016681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933765940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a561212fb8af94ca1dc7c2ec326922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParkBirdAudio
+  song1: {fileID: 8300000, guid: e2622b95524aab94b9a0448a1a4c6fc8, type: 3}
+  song2: {fileID: 8300000, guid: aa29893140715234fa4c6f0f17bc3d88, type: 3}
 --- !u!114 &1945413969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333642,11 +334133,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -333661,6 +334156,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1383293545}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1383293553}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!1001 &1993248403
 PrefabInstance:
@@ -356454,11 +356952,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MaxDistance
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: MinDistance
-      value: 100
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -356473,6 +356975,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1346446015}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1346446023}
   m_SourcePrefab: {fileID: 100100000, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
 --- !u!114 &2134312618
 MonoBehaviour:
@@ -357868,6 +358373,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCatchable
   hasBeenCaught: 0
   catchSound: {fileID: 8300000, guid: 133db80cdf8dc8f4f8976d80795fe76e, type: 3}
+--- !u!114 &2144939729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144939719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1f785038ee5174582c61ac2e14ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdAudio
+  song1: {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  song2: {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
 --- !u!1001 &2145419672
 PrefabInstance:
   m_ObjectHideFlags: 0

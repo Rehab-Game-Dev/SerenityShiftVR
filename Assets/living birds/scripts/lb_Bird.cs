@@ -13,11 +13,6 @@ public class lb_Bird : MonoBehaviour {
 		hopRight,
 	}
 
-	public AudioClip song1;
-	public AudioClip song2;
-	public AudioClip flyAway1;
-	public AudioClip flyAway2;
-
 	public bool fleeCrows = true;
 
 	Animator anim;
@@ -39,26 +34,13 @@ public class lb_Bird : MonoBehaviour {
 	float originalAnimSpeed = 1.0f;
 	Vector3 originalVelocity = Vector3.zero;
 
-	//hash variables for the animation states and animation properties
 	int idleAnimationHash;
-	int singAnimationHash;
-	int ruffleAnimationHash;
-	int preenAnimationHash;
-	int peckAnimationHash;
-	int hopForwardAnimationHash;
-	int hopBackwardAnimationHash;
-	int hopLeftAnimationHash;
-	int hopRightAnimationHash;
-	int worriedAnimationHash;
-	int landingAnimationHash;
 	int flyAnimationHash;
 	int hopIntHash;
 	int flyingBoolHash;
-	//int perchedBoolHash;
 	int peckBoolHash;
 	int ruffleBoolHash;
 	int preenBoolHash;
-	//int worriedBoolHash;
 	int landingBoolHash;
 	int singTriggerHash;
 	int flyingDirectionHash;
@@ -72,29 +54,18 @@ public class lb_Bird : MonoBehaviour {
 		anim = gameObject.GetComponent<Animator>();
 
 		idleAnimationHash = Animator.StringToHash("Base Layer.Idle");
-		//singAnimationHash = Animator.StringToHash ("Base Layer.sing");
-		//ruffleAnimationHash = Animator.StringToHash ("Base Layer.ruffle");
-		//preenAnimationHash = Animator.StringToHash ("Base Layer.preen");
-		//peckAnimationHash = Animator.StringToHash ("Base Layer.peck");
-		//hopForwardAnimationHash = Animator.StringToHash ("Base Layer.hopForward");
-		//hopBackwardAnimationHash = Animator.StringToHash ("Base Layer.hopBack");
-		//hopLeftAnimationHash = Animator.StringToHash ("Base Layer.hopLeft");
-		//hopRightAnimationHash = Animator.StringToHash ("Base Layer.hopRight");
-		//worriedAnimationHash = Animator.StringToHash ("Base Layer.worried");
-		//landingAnimationHash = Animator.StringToHash ("Base Layer.landing");
-		flyAnimationHash = Animator.StringToHash ("Base Layer.fly");
-		hopIntHash = Animator.StringToHash ("hop");
+		flyAnimationHash = Animator.StringToHash("Base Layer.fly");
+		hopIntHash = Animator.StringToHash("hop");
 		flyingBoolHash = Animator.StringToHash("flying");
-		//perchedBoolHash = Animator.StringToHash("perched");
 		peckBoolHash = Animator.StringToHash("peck");
 		ruffleBoolHash = Animator.StringToHash("ruffle");
 		preenBoolHash = Animator.StringToHash("preen");
-		//worriedBoolHash = Animator.StringToHash("worried");
 		landingBoolHash = Animator.StringToHash("landing");
-		singTriggerHash = Animator.StringToHash ("sing");
+		singTriggerHash = Animator.StringToHash("sing");
 		flyingDirectionHash = Animator.StringToHash("flyingDirectionX");
-		dieTriggerHash = Animator.StringToHash ("die");
-		anim.SetFloat ("IdleAgitated",agitationLevel);
+		dieTriggerHash = Animator.StringToHash("die");
+		anim.SetFloat("IdleAgitated", agitationLevel);
+
 		if (dead){
 			Revive();
 		}
@@ -104,9 +75,8 @@ public class lb_Bird : MonoBehaviour {
 		if(!dead){
 			originalAnimSpeed = anim.speed;
 			anim.speed = 0;
-			if(!GetComponent<Rigidbody>().isKinematic){originalVelocity = GetComponent<Rigidbody>().linearVelocity;}
+			if(!GetComponent<Rigidbody>().isKinematic){ originalVelocity = GetComponent<Rigidbody>().linearVelocity; }
 			GetComponent<Rigidbody>().isKinematic = true;
-			GetComponent<AudioSource>().Stop ();
 			paused = true;
 		}
 	}
@@ -119,13 +89,8 @@ public class lb_Bird : MonoBehaviour {
 			paused = false;
 		}
 	}
-	
+
 	IEnumerator FlyToTarget(Vector3 target){
-		if(Random.value < .5){
-			GetComponent<AudioSource>().PlayOneShot (flyAway1,.1f);
-		}else{
-			GetComponent<AudioSource>().PlayOneShot (flyAway2,.1f);
-		}
 		flying = true;
 		landing = false;
 		onGround = false;
@@ -133,15 +98,13 @@ public class lb_Bird : MonoBehaviour {
 		GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 		GetComponent<Rigidbody>().linearDamping = 0.5f;
 		anim.applyRootMotion = false;
-		anim.SetBool (flyingBoolHash,true);
+		anim.SetBool(flyingBoolHash, true);
 		anim.SetBool(landingBoolHash, false);
 
-		//Wait to apply velocity until the bird is entering the flying animation
 		while(anim.GetCurrentAnimatorStateInfo(0).nameHash != flyAnimationHash){
 			yield return 0;
 		}
 
-		//birds fly up and away from their perch for 1 second before orienting to the next target
 		GetComponent<Rigidbody>().AddForce((transform.forward * 50.0f*controller.birdScale)+(transform.up * 100.0f*controller.birdScale));
 		float t = 0.0f;
 		while (t<1.0f){
@@ -153,52 +116,42 @@ public class lb_Bird : MonoBehaviour {
 			}
 			yield return 0;
 		}
-		//start to rotate toward target
+
 		Vector3 vectorDirectionToTarget = (target-transform.position).normalized;
 		Quaternion finalRotation = Quaternion.identity;
 		Quaternion startingRotation = transform.rotation;
-		distanceToTarget = Vector3.Distance (transform.position,target);
-		Vector3 forwardStraight;//the forward vector on the xz plane
+		distanceToTarget = Vector3.Distance(transform.position, target);
+		Vector3 forwardStraight;
 		RaycastHit hit;
 		Vector3 tempTarget = target;
 		t = 0.0f;
 
-		//if the target is directly above the bird the bird needs to fly out before going up
-		//this should stop them from taking off like a rocket upwards
 		if(vectorDirectionToTarget.y>.5f){
 			tempTarget = transform.position + (new Vector3(transform.forward.x,.5f,transform.forward.z)*distanceToTarget);
 
 			while(vectorDirectionToTarget.y>.5f){
-				//Debug.DrawLine (tempTarget,tempTarget+Vector3.up,Color.red);
 				vectorDirectionToTarget = (tempTarget-transform.position).normalized;
 				finalRotation = Quaternion.LookRotation(vectorDirectionToTarget);
-				transform.rotation = Quaternion.Slerp (startingRotation,finalRotation,t);
-				anim.SetFloat (flyingDirectionHash,FindBankingAngle(transform.forward,vectorDirectionToTarget));
+				transform.rotation = Quaternion.Slerp(startingRotation, finalRotation, t);
+				anim.SetFloat(flyingDirectionHash, FindBankingAngle(transform.forward, vectorDirectionToTarget));
 				t += Time.deltaTime*0.5f;
 				GetComponent<Rigidbody>().AddForce(transform.forward * 70.0f*controller.birdScale * Time.deltaTime);
-
-				//Debug.DrawRay (transform.position,transform.forward,Color.green);
-
-				vectorDirectionToTarget = (target-transform.position).normalized;//reset the variable to reflect the actual target and not the temptarget
+				vectorDirectionToTarget = (target-transform.position).normalized;
 
 				if (Physics.Raycast(transform.position,-Vector3.up,out hit,0.15f*controller.birdScale) && GetComponent<Rigidbody>().linearVelocity.y < 0){
-					//if the bird is going to collide with the ground zero out vertical velocity
 					if(!hit.collider.isTrigger){
-						GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, 0.0f,GetComponent<Rigidbody>().linearVelocity.z);
+						GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, 0.0f, GetComponent<Rigidbody>().linearVelocity.z);
 					}
 				}
 				if (Physics.Raycast(transform.position,Vector3.up,out hit,0.15f*controller.birdScale) && GetComponent<Rigidbody>().linearVelocity.y > 0){
-					//if the bird is going to collide with something overhead zero out vertical velocity
 					if(!hit.collider.isTrigger){
-						GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, 0.0f,GetComponent<Rigidbody>().linearVelocity.z);
+						GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, 0.0f, GetComponent<Rigidbody>().linearVelocity.z);
 					}
 				}
-				//check for collisions with non trigger colliders and abort flight if necessary
 				if(controller.collideWithObjects){
 					forwardStraight = transform.forward;
 					forwardStraight.y = 0.0f;
-					//Debug.DrawRay (transform.position+(transform.forward*.1f),forwardStraight*.75f,Color.green);
-					if (Physics.Raycast (transform.position+(transform.forward*.15f*controller.birdScale),forwardStraight,out hit,.75f*controller.birdScale)){
+					if (Physics.Raycast(transform.position+(transform.forward*.15f*controller.birdScale),forwardStraight,out hit,.75f*controller.birdScale)){
 						if(!hit.collider.isTrigger){
 							AbortFlyToTarget();
 						}
@@ -210,40 +163,34 @@ public class lb_Bird : MonoBehaviour {
 
 		finalRotation = Quaternion.identity;
 		startingRotation = transform.rotation;
-		distanceToTarget = Vector3.Distance (transform.position,target);
+		distanceToTarget = Vector3.Distance(transform.position, target);
 
-		//rotate the bird toward the target over time
 		while(transform.rotation != finalRotation || distanceToTarget >= 1.5f){
 			if(!paused){
-				distanceToTarget = Vector3.Distance (transform.position,target);
+				distanceToTarget = Vector3.Distance(transform.position, target);
 				vectorDirectionToTarget = (target-transform.position).normalized;
 				if(vectorDirectionToTarget==Vector3.zero){
 					vectorDirectionToTarget = new Vector3(0.0001f,0.00001f,0.00001f);
 				}
 				finalRotation = Quaternion.LookRotation(vectorDirectionToTarget);
-				transform.rotation = Quaternion.Slerp (startingRotation,finalRotation,t);
-				anim.SetFloat (flyingDirectionHash,FindBankingAngle(transform.forward,vectorDirectionToTarget));
+				transform.rotation = Quaternion.Slerp(startingRotation, finalRotation, t);
+				anim.SetFloat(flyingDirectionHash, FindBankingAngle(transform.forward, vectorDirectionToTarget));
 				t += Time.deltaTime*0.5f;
 				GetComponent<Rigidbody>().AddForce(transform.forward * 70.0f*controller.birdScale * Time.deltaTime);
 				if (Physics.Raycast(transform.position,-Vector3.up,out hit,0.15f*controller.birdScale) && GetComponent<Rigidbody>().linearVelocity.y < 0){
-					//if the bird is going to collide with the ground zero out vertical velocity
 					if(!hit.collider.isTrigger){
-						GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, 0.0f,GetComponent<Rigidbody>().linearVelocity.z);
+						GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, 0.0f, GetComponent<Rigidbody>().linearVelocity.z);
 					}
 				}
 				if (Physics.Raycast(transform.position,Vector3.up,out hit,0.15f*controller.birdScale) && GetComponent<Rigidbody>().linearVelocity.y > 0){
-					//if the bird is going to collide with something overhead zero out vertical velocity
 					if(!hit.collider.isTrigger){
-						GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, 0.0f,GetComponent<Rigidbody>().linearVelocity.z);
+						GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, 0.0f, GetComponent<Rigidbody>().linearVelocity.z);
 					}
 				}
-
-				//check for collisions with non trigger colliders and abort flight if necessary
 				if(controller.collideWithObjects){
 					forwardStraight = transform.forward;
 					forwardStraight.y = 0.0f;
-					//Debug.DrawRay (transform.position+(transform.forward*.1f),forwardStraight*.75f,Color.green);
-					if (Physics.Raycast (transform.position+(transform.forward*.15f*controller.birdScale),forwardStraight,out hit,.75f*controller.birdScale)){
+					if (Physics.Raycast(transform.position+(transform.forward*.15f*controller.birdScale),forwardStraight,out hit,.75f*controller.birdScale)){
 						if(!hit.collider.isTrigger){
 							AbortFlyToTarget();
 						}
@@ -253,48 +200,41 @@ public class lb_Bird : MonoBehaviour {
 			yield return 0;
 		}
 
-		//keep the bird pointing at the target and move toward it
 		float flyingForce = 50.0f*controller.birdScale;
 		while(true){
 			if(!paused){
-				//do a raycast to see if the bird is going to hit the ground
 				if (Physics.Raycast(transform.position,-Vector3.up,0.15f*controller.birdScale) && GetComponent<Rigidbody>().linearVelocity.y < 0){
-					GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, 0.0f,GetComponent<Rigidbody>().linearVelocity.z);
+					GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, 0.0f, GetComponent<Rigidbody>().linearVelocity.z);
 				}
 				if (Physics.Raycast(transform.position,Vector3.up,out hit,0.15f*controller.birdScale) && GetComponent<Rigidbody>().linearVelocity.y > 0){
-					//if the bird is going to collide with something overhead zero out vertical velocity
 					if(!hit.collider.isTrigger){
-						GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, 0.0f,GetComponent<Rigidbody>().linearVelocity.z);
+						GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, 0.0f, GetComponent<Rigidbody>().linearVelocity.z);
 					}
 				}
-
-				//check for collisions with non trigger colliders and abort flight if necessary
 				if(controller.collideWithObjects){
 					forwardStraight = transform.forward;
 					forwardStraight.y = 0.0f;
-					//Debug.DrawRay (transform.position+(transform.forward*.1f),forwardStraight*.75f,Color.green);
-					if (Physics.Raycast (transform.position+(transform.forward*.15f*controller.birdScale),forwardStraight,out hit,.75f*controller.birdScale)){
+					if (Physics.Raycast(transform.position+(transform.forward*.15f*controller.birdScale),forwardStraight,out hit,.75f*controller.birdScale)){
 						if(!hit.collider.isTrigger){
 							AbortFlyToTarget();
 						}
 					}
 				}
-
 				vectorDirectionToTarget = (target-transform.position).normalized;
 				finalRotation = Quaternion.LookRotation(vectorDirectionToTarget);
-				anim.SetFloat (flyingDirectionHash,FindBankingAngle(transform.forward,vectorDirectionToTarget));
+				anim.SetFloat(flyingDirectionHash, FindBankingAngle(transform.forward, vectorDirectionToTarget));
 				transform.rotation = finalRotation;
 				GetComponent<Rigidbody>().AddForce(transform.forward * flyingForce * Time.deltaTime);
-				distanceToTarget = Vector3.Distance (transform.position,target);
+				distanceToTarget = Vector3.Distance(transform.position, target);
 				if(distanceToTarget <= 1.5f*controller.birdScale){
 					solidCollider.enabled = false;
 					if(distanceToTarget < 0.5f*controller.birdScale){
-						break;	
+						break;
 					}else{
 						GetComponent<Rigidbody>().linearDamping = 2.0f;
 						flyingForce = 50.0f*controller.birdScale;
 					}
-				}else if (distanceToTarget <= 5.0f*controller.birdScale){
+				}else if(distanceToTarget <= 5.0f*controller.birdScale){
 					GetComponent<Rigidbody>().linearDamping = 1.0f;
 					flyingForce = 50.0f*controller.birdScale;
 				}
@@ -302,39 +242,34 @@ public class lb_Bird : MonoBehaviour {
 			yield return 0;
 		}
 
-		anim.SetFloat (flyingDirectionHash,0);
-		//initiate the landing for the bird to finally reach the target
+		anim.SetFloat(flyingDirectionHash, 0);
 		Vector3 vel = Vector3.zero;
 		flying = false;
 		landing = true;
 		solidCollider.enabled = false;
 		anim.SetBool(landingBoolHash, true);
-		anim.SetBool (flyingBoolHash,false);
+		anim.SetBool(flyingBoolHash, false);
 		t = 0.0f;
 		GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 
-		//tell any birds that are in the way to move their butts
-		Collider[] hitColliders = Physics.OverlapSphere(target,0.05f*controller.birdScale);
+		Collider[] hitColliders = Physics.OverlapSphere(target, 0.05f*controller.birdScale);
 		for(int i=0;i<hitColliders.Length;i++){
-			if (hitColliders[i].tag == "lb_bird" && hitColliders[i].transform != transform){
-				hitColliders[i].SendMessage ("FlyAway");
+			if(hitColliders[i].tag == "lb_bird" && hitColliders[i].transform != transform){
+				hitColliders[i].SendMessage("FlyAway");
 			}
 		}
 
-		//this while loop will reorient the rotation to vertical and translate the bird exactly to the target
 		startingRotation = transform.rotation;
-		transform.localEulerAngles = new Vector3(0.0f,transform.localEulerAngles.y,0.0f);
+		transform.localEulerAngles = new Vector3(0.0f, transform.localEulerAngles.y, 0.0f);
 		finalRotation = transform.rotation;
 		transform.rotation = startingRotation;
-		while (distanceToTarget>0.05f*controller.birdScale){
+		while(distanceToTarget>0.05f*controller.birdScale){
 			if(!paused){
-				transform.rotation = Quaternion.Slerp (startingRotation,finalRotation,t*4.0f);
-				transform.position = Vector3.SmoothDamp(transform.position,target,ref vel,0.5f);
+				transform.rotation = Quaternion.Slerp(startingRotation, finalRotation, t*4.0f);
+				transform.position = Vector3.SmoothDamp(transform.position, target, ref vel, 0.5f);
 				t += Time.deltaTime;
-				distanceToTarget = Vector3.Distance (transform.position,target);
-				if(t>2.0f){
-					break;//failsafe to stop birds from getting stuck
-				}
+				distanceToTarget = Vector3.Distance(transform.position, target);
+				if(t>2.0f){ break; }
 			}
 			yield return 0;
 		}
@@ -342,91 +277,84 @@ public class lb_Bird : MonoBehaviour {
 		GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 		anim.SetBool(landingBoolHash, false);
 		landing = false;
-		transform.localEulerAngles = new Vector3(0.0f,transform.localEulerAngles.y,0.0f);
+		transform.localEulerAngles = new Vector3(0.0f, transform.localEulerAngles.y, 0.0f);
 		transform.position = target;
 		anim.applyRootMotion = true;
 		onGround = true;
 	}
 
-	//Sets a variable between -1 and 1 to control the left and right banking animation
 	float FindBankingAngle(Vector3 birdForward, Vector3 dirToTarget){
-		Vector3 cr = Vector3.Cross (birdForward,dirToTarget);
-		float ang = Vector3.Dot (cr,Vector3.up);
+		Vector3 cr = Vector3.Cross(birdForward, dirToTarget);
+		float ang = Vector3.Dot(cr, Vector3.up);
 		return ang;
 	}
-	
+
 	void OnGroundBehaviors(){
 		idle = anim.GetCurrentAnimatorStateInfo(0).nameHash == idleAnimationHash;
 		if(!GetComponent<Rigidbody>().isKinematic){
 			GetComponent<Rigidbody>().isKinematic = true;
 		}
 		if(idle){
-			//the bird is in the idle animation, lets randomly choose a behavior every 3 seconds
-			if (Random.value < Time.deltaTime*.33){
-				//bird will display a behavior
-				//in the perched state the bird can only sing, preen, or ruffle
+			if(Random.value < Time.deltaTime*.33){
 				float rand = Random.value;
-				if (rand < .3){
+				if(rand < .3){
 					DisplayBehavior(birdBehaviors.sing);
-				}else if (rand < .5){
+				}else if(rand < .5){
 					DisplayBehavior(birdBehaviors.peck);
-				}else if (rand < .6){
-					DisplayBehavior(birdBehaviors.preen);	
-				}else if (!perched && rand<.7){
+				}else if(rand < .6){
+					DisplayBehavior(birdBehaviors.preen);
+				}else if(!perched && rand<.7){
 					DisplayBehavior(birdBehaviors.ruffle);
 				}else{
-					DisplayBehavior(birdBehaviors.sing);	
+					DisplayBehavior(birdBehaviors.sing);
 				}
-				//lets alter the agitation level of the brid so it uses a different mix of idle animation next time
-				anim.SetFloat ("IdleAgitated",Random.value);
+				anim.SetFloat("IdleAgitated", Random.value);
 			}
-			//birds should fly to a new target about every 10 seconds
-			if (Random.value < Time.deltaTime*.1){
-				FlyAway ();
+			if(Random.value < Time.deltaTime*.1){
+				FlyAway();
 			}
 		}
 	}
-	
+
 	void DisplayBehavior(birdBehaviors behavior){
 		idle = false;
-		switch (behavior){
+		switch(behavior){
 		case birdBehaviors.sing:
-			anim.SetTrigger(singTriggerHash);			
+			anim.SetTrigger(singTriggerHash);
 			break;
 		case birdBehaviors.ruffle:
 			anim.SetTrigger(ruffleBoolHash);
 			break;
 		case birdBehaviors.preen:
-			anim.SetTrigger(preenBoolHash);			
+			anim.SetTrigger(preenBoolHash);
 			break;
 		case birdBehaviors.peck:
-			anim.SetTrigger(peckBoolHash);			
+			anim.SetTrigger(peckBoolHash);
 			break;
 		case birdBehaviors.hopForward:
-			anim.SetInteger (hopIntHash, 1);			
+			anim.SetInteger(hopIntHash, 1);
 			break;
 		case birdBehaviors.hopLeft:
-			anim.SetInteger (hopIntHash, -2);			
+			anim.SetInteger(hopIntHash, -2);
 			break;
 		case birdBehaviors.hopRight:
-			anim.SetInteger (hopIntHash, 2);
+			anim.SetInteger(hopIntHash, 2);
 			break;
 		case birdBehaviors.hopBackward:
-			anim.SetInteger (hopIntHash, -1);			
+			anim.SetInteger(hopIntHash, -1);
 			break;
 		}
 	}
 
 	void OnTriggerEnter(Collider col){
-		if (col.tag == "lb_bird"){
-			FlyAway ();
+		if(col.tag == "lb_bird"){
+			FlyAway();
 		}
 	}
 
 	void OnTriggerExit(Collider col){
-		//if bird has hopped out of the target area lets fly
-		if (onGround && (col.tag == "lb_groundTarget" || col.tag == "lb_perchTarget")){
-			FlyAway ();
+		if(onGround && (col.tag == "lb_groundTarget" || col.tag == "lb_perchTarget")){
+			FlyAway();
 		}
 	}
 
@@ -434,14 +362,11 @@ public class lb_Bird : MonoBehaviour {
 		StopCoroutine("FlyToTarget");
 		solidCollider.enabled = false;
 		anim.SetBool(landingBoolHash, false);
-		anim.SetFloat (flyingDirectionHash,0);
-		transform.localEulerAngles = new Vector3(
-			0.0f,
-			transform.localEulerAngles.y,
-			0.0f);
-		FlyAway ();
+		anim.SetFloat(flyingDirectionHash, 0);
+		transform.localEulerAngles = new Vector3(0.0f, transform.localEulerAngles.y, 0.0f);
+		FlyAway();
 	}
-	
+
 	void FlyAway(){
 		if(!dead && controller != null){
 			StopCoroutine("FlyToTarget");
@@ -453,23 +378,22 @@ public class lb_Bird : MonoBehaviour {
 	void Flee(){
 		if(!dead){
 			StopCoroutine("FlyToTarget");
-			GetComponent<AudioSource>().Stop();
 			anim.Play(flyAnimationHash);
 			Vector3 farAwayTarget = transform.position;
-			farAwayTarget += new Vector3(Random.Range (-100,100)*controller.birdScale,10*controller.birdScale,Random.Range (-100,100)*controller.birdScale);
-			StartCoroutine("FlyToTarget",farAwayTarget);
+			farAwayTarget += new Vector3(Random.Range(-100,100)*controller.birdScale, 10*controller.birdScale, Random.Range(-100,100)*controller.birdScale);
+			StartCoroutine("FlyToTarget", farAwayTarget);
 		}
 	}
 
 	void CrowIsClose(){
-		if (fleeCrows && !dead){
-			Flee ();
+		if(fleeCrows && !dead){
+			Flee();
 		}
 	}
 
 	public void KillBird(){
 		if(!dead){
-			controller.SendMessage ("FeatherEmit",transform.position);
+			if(controller != null) controller.SendMessage("FeatherEmit", transform.position);
 			anim.SetTrigger(dieTriggerHash);
 			anim.applyRootMotion = false;
 			dead = true;
@@ -481,8 +405,8 @@ public class lb_Bird : MonoBehaviour {
 			AbortFlyToTarget();
 			StopAllCoroutines();
 			GetComponent<Collider>().isTrigger = false;
-			birdCollider.center = new Vector3(0.0f,0.0f,0.0f);
-			birdCollider.size = new Vector3(0.1f,0.01f,0.1f)*controller.birdScale;
+			birdCollider.center = new Vector3(0.0f, 0.0f, 0.0f);
+			birdCollider.size = new Vector3(0.1f, 0.01f, 0.1f)*controller.birdScale;
 			GetComponent<Rigidbody>().isKinematic = false;
 			GetComponent<Rigidbody>().useGravity = true;
 		}
@@ -490,7 +414,7 @@ public class lb_Bird : MonoBehaviour {
 
 	public void KillBirdWithForce(Vector3 force){
 		if(!dead){
-			controller.SendMessage ("FeatherEmit",transform.position);
+			if(controller != null) controller.SendMessage("FeatherEmit", transform.position);
 			anim.SetTrigger(dieTriggerHash);
 			anim.applyRootMotion = false;
 			dead = true;
@@ -502,11 +426,11 @@ public class lb_Bird : MonoBehaviour {
 			AbortFlyToTarget();
 			StopAllCoroutines();
 			GetComponent<Collider>().isTrigger = false;
-			birdCollider.center = new Vector3(0.0f,0.0f,0.0f);
-			birdCollider.size = new Vector3(0.1f,0.01f,0.1f)*controller.birdScale;
+			birdCollider.center = new Vector3(0.0f, 0.0f, 0.0f);
+			birdCollider.size = new Vector3(0.1f, 0.01f, 0.1f)*controller.birdScale;
 			GetComponent<Rigidbody>().isKinematic = false;
 			GetComponent<Rigidbody>().useGravity = true;
-			GetComponent<Rigidbody>().AddForce (force);
+			GetComponent<Rigidbody>().AddForce(force);
 		}
 	}
 
@@ -524,7 +448,7 @@ public class lb_Bird : MonoBehaviour {
 			GetComponent<Rigidbody>().isKinematic = false;
 			GetComponent<Rigidbody>().useGravity = false;
 			anim.Play(idleAnimationHash);
-			if (controller != null) {
+			if(controller != null){
 				controller.SendMessage("BirdFindTarget", gameObject);
 			}
 		}
@@ -535,29 +459,19 @@ public class lb_Bird : MonoBehaviour {
 	}
 
 	void ResetHopInt(){
-		anim.SetInteger (hopIntHash, 0);
+		anim.SetInteger(hopIntHash, 0);
 	}
 
 	void ResetFlyingLandingVariables(){
-		if (flying || landing){
+		if(flying || landing){
 			flying = false;
 			landing = false;
 		}
 	}
 
-	void PlaySong(){
-		if (!dead){
-			if(Random.value < .5){
-				GetComponent<AudioSource>().PlayOneShot (song1,1);
-			}else{
-				GetComponent<AudioSource>().PlayOneShot (song2,1);
-			}
-		}
-	}
-
-	void Update () {
+	void Update(){
 		if(onGround && !paused && !dead){
-			OnGroundBehaviors();	
+			OnGroundBehaviors();
 		}
 	}
 }

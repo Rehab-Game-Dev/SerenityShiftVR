@@ -1,14 +1,5 @@
 fileFormatVersion: 2
 guid: 2a58512123bcd224eb61112b203e6413
-MonoImporter:
-  externalObjects: {}
-  serializedVersion: 2
-  defaultReferences: []
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 15649
@@ -16,3 +7,12 @@ AssetOrigin:
   packageVersion: v1.2
   assetPath: Assets/living birds/scripts/lb_Bird.cs
   uploadId: 22984
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: -100
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
