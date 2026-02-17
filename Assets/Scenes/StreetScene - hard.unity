@@ -132524,8 +132524,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 16.614925, y: 30.673069, z: 16.68812}
-  m_Center: {x: -7.764063, y: 14.8365345, z: 8.240054}
+  m_Size: {x: 17.226448, y: 30.673069, z: 16.68812}
+  m_Center: {x: -8.069824, y: 14.8365345, z: 8.240054}
 --- !u!1001 &1031933455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -258326,7 +258326,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 0d0595fcc423bb44994905de67022889, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
