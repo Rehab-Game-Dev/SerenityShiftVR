@@ -21,6 +21,10 @@ https://github.com/Rehab-Game-Dev/SerenityShiftVR/wiki
 **YouTube Demo:**  
 https://youtu.be/bzBSL8CwUaQ
 
+**YouTube Trailer:**  
+https://youtube.com/shorts/lu3dgFSBwcg?feature=share
+
+
 **Web Demo (itch.io):**  
 (https://yarinkash1.itch.io/serenity-shift-vr)
 
