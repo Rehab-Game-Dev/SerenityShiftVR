@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-
 public class NPCSpawner : MonoBehaviour
 {
     [Header("Settings")]
@@ -10,12 +9,10 @@ public class NPCSpawner : MonoBehaviour
     
     // Optional: Set a uniform scale for all spawned NPCs
     public Vector3 spawnScale = new Vector3(1, 1, 1); 
-
     void Start()
     {
         SpawnNPCs();
     }
-
     [ContextMenu("Spawn NPCs Now")]
     public void SpawnNPCs()
     {
@@ -24,12 +21,16 @@ public class NPCSpawner : MonoBehaviour
             Debug.LogError("Please assign at least one NPC Prefab!");
             return;
         }
-
         GameObject parentGroup = new GameObject("Generated_NPCs");
         parentGroup.transform.position = transform.position;
 
-        for (int i = 0; i < amount; i++)
+        int spawned = 0;
+        int maxAttempts = amount * 10;
+        int attempts = 0;
+
+        while (spawned < amount && attempts < maxAttempts)
         {
+            attempts++;
             Vector3 randomPoint = transform.position + Random.insideUnitSphere * range;
             
             NavMeshHit hit;
@@ -37,7 +38,6 @@ public class NPCSpawner : MonoBehaviour
             {
                 int randomIndex = Random.Range(0, npcPrefabs.Length);
                 GameObject selectedPrefab = npcPrefabs[randomIndex];
-
                 GameObject newNPC = Instantiate(selectedPrefab, hit.position, Quaternion.identity);
                 
                 // determine scale
@@ -45,7 +45,11 @@ public class NPCSpawner : MonoBehaviour
                 
                 newNPC.transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
                 newNPC.transform.parent = parentGroup.transform;
+                spawned++;
             }
         }
+
+        if (spawned < amount)
+            Debug.LogWarning($"NPCSpawner: Only spawned {spawned}/{amount} NPCs. NavMesh may be too small for the range.");
     }
 }
