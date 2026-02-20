@@ -3340,6 +3340,9 @@ PrefabInstance:
     - {fileID: 6501755809687671949, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 29463600}
     - targetCorrespondingSourceObject: {fileID: 1767192433, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1754152345}
@@ -3349,6 +3352,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
   m_PrefabInstance: {fileID: 29463598}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &29463600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29463599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062482db8942a264cb303b06227637f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseManager
 --- !u!1 &29543864 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000012950070334, guid: 62726927b5a3f614c88974c7d57d66ff, type: 3}
@@ -55390,6 +55405,7 @@ GameObject:
   - component: {fileID: 395818442}
   - component: {fileID: 395818441}
   - component: {fileID: 395818447}
+  - component: {fileID: 395818448}
   m_Layer: 6
   m_Name: Player_PC
   m_TagString: Player
@@ -55555,6 +55571,18 @@ MonoBehaviour:
   playerController: {fileID: 395818441}
   speedParameterName: speed
   animationSmoothTime: 0.1
+--- !u!114 &395818448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395818440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062482db8942a264cb303b06227637f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseManager
 --- !u!4 &395898731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 3020217c18c3b464e845700fc742b923, type: 3}

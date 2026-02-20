@@ -48,6 +48,7 @@ public class PlayerMovementPC : MonoBehaviour
 
     private void HandleLook()
     {
+        if (Time.timeScale == 0f) return; // Don't allow to look around when the game is paused
         if (Mouse.current == null || cameraTransform == null) return;
 
         Vector2 delta = Mouse.current.delta.ReadValue();

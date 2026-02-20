@@ -59887,6 +59887,7 @@ GameObject:
   - component: {fileID: 395818442}
   - component: {fileID: 395818441}
   - component: {fileID: 395818447}
+  - component: {fileID: 395818448}
   m_Layer: 6
   m_Name: Player_PC
   m_TagString: Player
@@ -60052,6 +60053,18 @@ MonoBehaviour:
   playerController: {fileID: 395818441}
   speedParameterName: speed
   animationSmoothTime: 0.1
+--- !u!114 &395818448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395818440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062482db8942a264cb303b06227637f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseManager
 --- !u!114 &396081026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363911,7 +363924,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9212102059943125963, guid: 1cf4af9b327d0974caeec724d62390bd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 365312477}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7494148753911298708, guid: 1cf4af9b327d0974caeec724d62390bd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8320729036223036565}
   m_SourcePrefab: {fileID: 100100000, guid: 1cf4af9b327d0974caeec724d62390bd, type: 3}
 --- !u!4 &8320729036223036562 stripped
 Transform:
@@ -363928,6 +363944,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7494148753911298708, guid: 1cf4af9b327d0974caeec724d62390bd, type: 3}
   m_PrefabInstance: {fileID: 8320729036223036561}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8320729036223036565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8320729036223036564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062482db8942a264cb303b06227637f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseManager
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
