@@ -8,7 +8,7 @@ public class NPCSpawner : MonoBehaviour
     public int amount = 20;
     public float range = 50f;
     
-    // שליטה על הגודל דרך האינספקטור
+    // Optional: Set a uniform scale for all spawned NPCs
     public Vector3 spawnScale = new Vector3(1, 1, 1); 
 
     void Start()
