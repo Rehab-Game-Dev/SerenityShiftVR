@@ -29,13 +29,10 @@ public class CarBrain : MonoBehaviour
     void Update()
     {
         if (!agent.isOnNavMesh) return;
-
         CheckForObstacles();
-
         if (isStopped) return;
         
         if (pathPoints == null || pathPoints.Count == 0) return;
-
         if (!agent.pathPending && agent.remainingDistance < 4f)
         {
             currentPointIndex++;
@@ -56,7 +53,6 @@ public class CarBrain : MonoBehaviour
         Vector3 sensorStart = transform.position + transform.forward * 1.5f + Vector3.up * 0.5f;
         
         bool obstacleDetected = false;
-
         if (Physics.Raycast(sensorStart, transform.forward, out hit, detectionDistance, obstacleLayers))
         {
             if (hit.collider.gameObject != gameObject)
