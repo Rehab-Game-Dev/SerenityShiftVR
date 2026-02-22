@@ -135054,6 +135054,10 @@ MonoBehaviour:
   amount: 20
   range: 50
   spawnScale: {x: 1.6, y: 1.6, z: 1.6}
+  buildingLayer:
+    serializedVersion: 2
+    m_Bits: 2056
+  clearanceRadius: 0.5
 --- !u!4 &1035369569
 Transform:
   m_ObjectHideFlags: 0
