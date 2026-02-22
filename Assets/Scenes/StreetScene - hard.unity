@@ -7842,6 +7842,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: 064f774b5c38e6b40b541b3b479ae758, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -87544,6 +87548,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 363972572}
     m_Modifications:
+    - target: {fileID: 100008, guid: 278282600c6c47e4cb2b53dc2757c7c3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: 278282600c6c47e4cb2b53dc2757c7c3, type: 3}
       propertyPath: m_Name
       value: Furniture_foliageplant_11_lod_set
@@ -87614,6 +87622,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 278282600c6c47e4cb2b53dc2757c7c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: 278282600c6c47e4cb2b53dc2757c7c3, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 20500000, guid: 278282600c6c47e4cb2b53dc2757c7c3, type: 3}
@@ -100521,6 +100533,52 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2064837907}
   m_SourcePrefab: {fileID: 100100000, guid: efc7b9e2d270b14488b0aeb25b7f63b7, type: 3}
+--- !u!1 &759216146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 759216148}
+  - component: {fileID: 759216147}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &759216147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759216146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89131e8d2c62117499ae0e59073272ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  isMusicMuted: 0
+  backgroundMusicSource: {fileID: 0}
+--- !u!4 &759216148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759216146}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 950.7934, y: 0.00006, z: 3472.3635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &759616274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -155282,6 +155340,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2490445168223352566, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2043912385}
+    - targetCorrespondingSourceObject: {fileID: 1832276150352594290, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1900341879}
   m_SourcePrefab: {fileID: 100100000, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
 --- !u!1 &1180334506 stripped
 GameObject:
@@ -187470,6 +187531,10 @@ PrefabInstance:
       propertyPath: m_AnimatePhysics
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: e4775f9bb9b3b0f4bbfe6fc1f9fa5e0f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -205253,6 +205318,11 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!1 &1533579692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1832276150352594290, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+  m_PrefabInstance: {fileID: 1180129495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1533665833 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000012455841860, guid: 62726927b5a3f614c88974c7d57d66ff, type: 3}
@@ -213814,6 +213884,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 955139264}
     m_Modifications:
+    - target: {fileID: 2730785710225153867, guid: d95a6c783e91fea4d8096b66eb134ed5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3322446779068336220, guid: d95a6c783e91fea4d8096b66eb134ed5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361211517816473385, guid: d95a6c783e91fea4d8096b66eb134ed5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7136653705662473623, guid: d95a6c783e91fea4d8096b66eb134ed5, type: 3}
       propertyPath: m_Name
       value: OakBigTree01_pr
@@ -252074,12 +252156,24 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1407291950378121157, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
   m_PrefabInstance: {fileID: 1180129495}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1533579692}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
+--- !u!114 &1900341879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533579692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 199baf635e4526040861529c97d10463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseVolumeToggle
 --- !u!1 &1900597355 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000014020386172, guid: 62726927b5a3f614c88974c7d57d66ff, type: 3}
@@ -285156,3 +285250,4 @@ SceneRoots:
   - {fileID: 2141431580}
   - {fileID: 477761540}
   - {fileID: 1180129495}
+  - {fileID: 759216148}
