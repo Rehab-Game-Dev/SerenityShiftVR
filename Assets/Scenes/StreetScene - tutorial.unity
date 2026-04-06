@@ -223619,6 +223619,34 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 954906474053442199, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_Color.b
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 954906474053442199, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_Color.g
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 954906474053442199, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_Color.r
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 954906474053442199, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 954906474053442199, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 954906474053442199, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 954906474053442199, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1348046280262610566, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -223646,6 +223674,46 @@ PrefabInstance:
     - target: {fileID: 1407291950378121157, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEditor.MonoScript, UnityEditor.CoreModule
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471624938352412080, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_Color.b
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471624938352412080, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_Color.g
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471624938352412080, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_Color.r
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471624938352412080, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 176
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471624938352412080, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471624938352412080, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471624938352412080, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_FontData.m_RichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471624938352412080, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471624938352412080, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019582263469039695, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_Type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3979312451310648448, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       propertyPath: m_Pivot.x
@@ -223727,6 +223795,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5055390363560888628, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_Color.b
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055390363560888628, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_Color.g
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055390363560888628, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_Color.r
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055390363560888628, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055390363560888628, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055390363560888628, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055390363560888628, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6042118793835209453, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       propertyPath: m_Name
       value: PauseOverlay
@@ -223742,9 +223838,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2490445168223352566, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       insertIndex: -1
       addedObject: {fileID: 89683135}
+    - targetCorrespondingSourceObject: {fileID: 7466206529596353659, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1681441685}
+    - targetCorrespondingSourceObject: {fileID: 3899789279747128150, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1681441684}
     - targetCorrespondingSourceObject: {fileID: 1832276150352594290, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1681441679}
+    - targetCorrespondingSourceObject: {fileID: 1024545715264710726, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1681441683}
   m_SourcePrefab: {fileID: 100100000, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
 --- !u!1 &1681441677 stripped
 GameObject:
@@ -223768,6 +223873,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199baf635e4526040861529c97d10463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseVolumeToggle
+--- !u!1 &1681441680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1024545715264710726, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+  m_PrefabInstance: {fileID: 1681441676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1681441681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3899789279747128150, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+  m_PrefabInstance: {fileID: 1681441676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1681441682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7466206529596353659, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+  m_PrefabInstance: {fileID: 1681441676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1681441683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681441680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1681441684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681441681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1681441685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681441682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!114 &1682040271
 MonoBehaviour:
   m_ObjectHideFlags: 0
