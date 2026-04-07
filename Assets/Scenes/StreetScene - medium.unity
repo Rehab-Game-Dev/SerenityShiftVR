@@ -599,11 +599,11 @@ PrefabInstance:
     - target: {fileID: 808884847487336295, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 395818448}
     - target: {fileID: 808884847487336295, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8320729036223036565}
     - target: {fileID: 808884847487336295, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -655,7 +655,7 @@ PrefabInstance:
     - target: {fileID: 1348046280262610566, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 857033554}
     - target: {fileID: 1348046280262610566, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadMainMenu
@@ -68265,7 +68265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062482db8942a264cb303b06227637f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
-  pauseOverlay: {fileID: 0}
+  pauseOverlay: {fileID: 1421317824}
 --- !u!114 &396081026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279116,6 +279116,11 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!1 &1421317824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6042118793835209453, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+  m_PrefabInstance: {fileID: 4441619}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1422349850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415598,7 +415603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062482db8942a264cb303b06227637f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
-  pauseOverlay: {fileID: 0}
+  pauseOverlay: {fileID: 1421317824}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

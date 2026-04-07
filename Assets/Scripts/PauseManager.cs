@@ -1,11 +1,21 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.AI;
+
 public class PauseManager : MonoBehaviour
 {
     private bool isPaused = false;
     private List<AudioSource> pausedAudioSources = new List<AudioSource>();
     public GameObject pauseOverlay;
+
+    void Start()
+    {
+        Debug.Log("PauseManager started on: " + gameObject.name);
+        if (pauseOverlay == null)
+            pauseOverlay = GameObject.Find("PauseOverlay");
+        Debug.Log("PauseOverlay found: " + (pauseOverlay != null ? pauseOverlay.name : "NULL"));
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -14,6 +24,7 @@ public class PauseManager : MonoBehaviour
             else Pause();
         }
     }
+
     public void Pause()
     {
         isPaused = true;

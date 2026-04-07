@@ -3392,7 +3392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062482db8942a264cb303b06227637f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
-  pauseOverlay: {fileID: 0}
+  pauseOverlay: {fileID: 1270584865}
 --- !u!1 &29543864 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000012950070334, guid: 62726927b5a3f614c88974c7d57d66ff, type: 3}
@@ -11927,11 +11927,11 @@ PrefabInstance:
     - target: {fileID: 808884847487336295, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 395818448}
     - target: {fileID: 808884847487336295, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 29463600}
     - target: {fileID: 808884847487336295, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -11983,7 +11983,7 @@ PrefabInstance:
     - target: {fileID: 1348046280262610566, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 857033554}
     - target: {fileID: 1348046280262610566, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadMainMenu
@@ -70854,7 +70854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062482db8942a264cb303b06227637f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
-  pauseOverlay: {fileID: 0}
+  pauseOverlay: {fileID: 1270584865}
 --- !u!4 &395898731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 3020217c18c3b464e845700fc742b923, type: 3}
@@ -201067,6 +201067,11 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!1 &1270584865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6042118793835209453, guid: 3722a07bd36487d4d80a5d105331e597, type: 3}
+  m_PrefabInstance: {fileID: 59201951}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1270673175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -259891,6 +259896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1642228824}
   - component: {fileID: 1642228823}
+  - component: {fileID: 1642228825}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -259925,6 +259931,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1642228825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642228822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062482db8942a264cb303b06227637f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseManager
+  pauseOverlay: {fileID: 1270584865}
 --- !u!1001 &1642333829
 PrefabInstance:
   m_ObjectHideFlags: 0
