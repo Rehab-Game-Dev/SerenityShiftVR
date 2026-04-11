@@ -26,7 +26,7 @@ https://youtube.com/shorts/lu3dgFSBwcg?feature=share
 
 
 **Web Demo (itch.io):**  
-(https://yarinkash1.itch.io/serenity-shift-vr)
+[(https://yarinkash1.itch.io/serenity-shift-vr)](https://yarinkash1.itch.io/serenity-shift-vr-sem2-beta-demo)
 
 ## Installation Instructions
 
