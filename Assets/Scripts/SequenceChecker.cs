@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-
 public class SequenceChecker : MonoBehaviour
 {
     [SerializeField] private List<string> correctSequence = new List<string> 
@@ -42,7 +41,12 @@ public class SequenceChecker : MonoBehaviour
         {
             Debug.Log("Puzzle solved! Correct sequence completed!");
             puzzleSolved = true;
-            ShowDialog(successMessage);
+
+            TimerManager timer = FindFirstObjectByType<TimerManager>();
+            if (timer != null) timer.StopTimer();
+            string timeString = timer != null ? timer.GetFormattedTime() : "";
+            ShowDialog(successMessage + "\n" + timeString);
+
             StartCoroutine(RestartMusicAfterDialog());
         }
     }
@@ -83,7 +87,6 @@ public class SequenceChecker : MonoBehaviour
     
     private IEnumerator RestartMusicAfterDialog()
     {
-        // Wait for the dialog to finish (5 seconds total)
         yield return new WaitForSeconds(5f);
         
         if (djangoMusicSource != null)
@@ -98,14 +101,12 @@ public class SequenceChecker : MonoBehaviour
             Debug.Log("Django's music resumed at half volume");
         }
         
-        // Hide the cube notes after success
         if (cubeNotes != null)
         {
             cubeNotes.SetActive(false);
             Debug.Log("Cube notes hidden");
         }
         
-        // Hide the instruction panel
         if (instructionPanel != null)
         {
             instructionPanel.SetActive(false);

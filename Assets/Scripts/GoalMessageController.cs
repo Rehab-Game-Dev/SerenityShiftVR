@@ -59,7 +59,10 @@ public class GoalMessageController : MonoBehaviour
             }
             else if (redShirtsCaught >= 3)
             {
-                goalText.text = "Excellent, you caught all of them!";
+                TimerManager timer = FindFirstObjectByType<TimerManager>();
+                if (timer != null) timer.StopTimer();
+                string timeString = timer != null ? timer.GetFormattedTime() : "";
+                goalText.text = "Excellent, you caught all of them!\n" + timeString;
             }
         }
         
@@ -84,7 +87,10 @@ public class GoalMessageController : MonoBehaviour
             }
             else if (birdsCaught >= 3)
             {
-                goalText.text = "Excellent! You caught all the birds!";
+                TimerManager timer = FindFirstObjectByType<TimerManager>();
+                if (timer != null) timer.StopTimer();
+                string timeString = timer != null ? timer.GetFormattedTime() : "";
+                goalText.text = "Excellent! You caught all the birds!\n" + timeString;
             }
         }
         

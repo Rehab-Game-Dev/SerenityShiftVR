@@ -53,7 +53,10 @@ public class BirdMessageController : MonoBehaviour
             }
             else if (birdsCaught >= 3)
             {
-                birdText.text = "Excellent, you caught all of them!";
+                TimerManager timer = FindFirstObjectByType<TimerManager>();
+                if (timer != null) timer.StopTimer();
+                string timeString = timer != null ? timer.GetFormattedTime() : "";
+                birdText.text = "Excellent, you caught all of them!\n" + timeString;
             }
         }
         

@@ -1,12 +1,11 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-
 public class GoalZoneTrigger : MonoBehaviour
 {
     [Header("UI Reference")]
     public TextMeshProUGUI goalMessage;
-    public GameObject instructionPanel; // Add this
+    public GameObject instructionPanel;
     
     [Header("Settings")]
     public float displayDuration = 5f;
@@ -17,7 +16,6 @@ public class GoalZoneTrigger : MonoBehaviour
     
     private void Start()
     {
-        // Make sure the message is hidden at start
         if (goalMessage != null)
         {
             goalMessage.gameObject.SetActive(false);
@@ -27,17 +25,19 @@ public class GoalZoneTrigger : MonoBehaviour
             Debug.LogError("Goal Message is not assigned in GoalZoneTrigger!");
         }
         
-        // Get references to the pulse script and particle system
         pulseScript = GetComponent<TargetPulse>();
         particles = GetComponentInChildren<ParticleSystem>();
     }
     
     private void OnTriggerEnter(Collider other)
     {
-        // Check if player entered the target zone
         if (other.CompareTag("Player") && !hasTriggered)
         {
             hasTriggered = true;
+
+            TimerManager timer = FindFirstObjectByType<TimerManager>();
+            if (timer != null) timer.StopTimer();
+
             StopEffects();
             StartCoroutine(ShowGoalMessage());
         }
@@ -45,13 +45,11 @@ public class GoalZoneTrigger : MonoBehaviour
     
     private void StopEffects()
     {
-        // Stop the pulsing animation
         if (pulseScript != null)
         {
             pulseScript.enabled = false;
         }
         
-        // Stop the particle system
         if (particles != null)
         {
             particles.Stop();
@@ -62,34 +60,28 @@ public class GoalZoneTrigger : MonoBehaviour
     {
         if (goalMessage != null)
         {
-            // Show the message
+            TimerManager timer = FindFirstObjectByType<TimerManager>();
+            string timeString = timer != null ? timer.GetFormattedTime() : "";
+            goalMessage.text = "You reached the goal!\n" + timeString;
             goalMessage.gameObject.SetActive(true);
             Debug.Log("You reached the goal!");
             
-            // Wait for duration
             yield return new WaitForSeconds(displayDuration);
             
-            // Hide the message
             goalMessage.gameObject.SetActive(false);
             
-            // Hide the instruction panel
             if (instructionPanel != null)
             {
                 instructionPanel.SetActive(false);
                 Debug.Log("Instruction panel hidden");
             }
-            
-            // Optional: Reset the trigger if you want it to work multiple times
-            // hasTriggered = false;
         }
     }
     
-    // Optional: manually reset the trigger
     public void ResetTrigger()
     {
         hasTriggered = false;
         
-        // Restart effects
         if (pulseScript != null)
         {
             pulseScript.enabled = true;
