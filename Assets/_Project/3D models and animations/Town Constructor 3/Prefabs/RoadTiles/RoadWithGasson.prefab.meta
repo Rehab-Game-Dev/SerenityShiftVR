@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 80253fc552f44224689b80efab3d1989
+timeCreated: 1474351023
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/RoadTiles/RoadWithGasson.prefab
+  uploadId: 292189

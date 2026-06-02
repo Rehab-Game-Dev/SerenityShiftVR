@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e922147520c82914796a4ffc5cce245e
+timeCreated: 1474342538
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/Building1/B1_WallWindow.prefab
+  uploadId: 292189

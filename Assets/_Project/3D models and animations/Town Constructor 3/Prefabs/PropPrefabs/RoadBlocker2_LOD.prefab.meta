@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 489910e9e6d9d9042b7f8d9b4c59e3c2
+timeCreated: 1471821715
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/PropPrefabs/RoadBlocker2_LOD.prefab
+  uploadId: 292189

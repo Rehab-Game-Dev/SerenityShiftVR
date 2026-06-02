@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b41901721d88ec847bf159d10531e09e
+timeCreated: 1470077205
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/Prefabs/PreBuiltBuildings/Building1_LOD.prefab
+  uploadId: 292189

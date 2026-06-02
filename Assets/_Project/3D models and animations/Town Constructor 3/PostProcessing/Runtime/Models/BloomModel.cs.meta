@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: e215a6ec29d100f489c186f289526f06
+timeCreated: 1467126855
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/PostProcessing/Runtime/Models/BloomModel.cs
+  uploadId: 292189

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d7daeefbca4f14360bac0e1df1bdacd4
+timeCreated: 1479896287
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71070
+  packageName: Town Constructor 3
+  packageVersion: 1.0
+  assetPath: Assets/Town Constructor 3/PostProcessing/Utilities/CustomMotionTexture/Materials/DebugMotionVectors.mat
+  uploadId: 292189
