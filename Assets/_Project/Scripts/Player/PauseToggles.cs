@@ -15,8 +15,13 @@ public class PauseToggles : MonoBehaviour
         volumeToggle.isOn = PlayerPrefs.GetInt("VolumeToggle", 1) == 1;
 
         // Listen for changes
-        compassToggle.onValueChanged.AddListener(val => PlayerPrefs.SetInt("CompassToggle", val ? 1 : 0));
-        timerToggle.onValueChanged.AddListener(val => PlayerPrefs.SetInt("TimerToggle", val ? 1 : 0));
+        compassToggle.onValueChanged.AddListener(val => 
+        {
+            PlayerPrefs.SetInt("CompassToggle", val ? 1 : 0);
+            var compass = Object.FindFirstObjectByType<CompassController>(FindObjectsInactive.Include);
+if (compass != null) compass.UpdateVisibility();
+        });
+timerToggle.onValueChanged.AddListener(val => PlayerPrefs.SetInt("TimerToggle", val ? 1 : 0));
         volumeToggle.onValueChanged.AddListener(val => PlayerPrefs.SetInt("VolumeToggle", val ? 1 : 0));
     }
 }

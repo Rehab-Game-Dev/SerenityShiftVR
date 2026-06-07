@@ -16,10 +16,36 @@ public class CompassController : MonoBehaviour
     private Transform closestTarget;
     private string currentSceneName;
 
+    private CanvasGroup canvasGroup;
+
+    void Awake()
+    {
+        canvasGroup = GetComponent<CanvasGroup>();
+        if (canvasGroup == null) canvasGroup = gameObject.AddComponent<CanvasGroup>();
+    }
+
     void Start()
     {
         currentSceneName = SceneManager.GetActiveScene().name;
         FindPlayer();
+        UpdateVisibility();
+    }
+
+    public void UpdateVisibility()
+    {
+        if (canvasGroup == null) canvasGroup = GetComponent<CanvasGroup>();
+        
+        bool isEnabled = PlayerPrefs.GetInt("CompassToggle", 1) == 1;
+        if (canvasGroup != null)
+{
+            canvasGroup.alpha = isEnabled ? 1 : 0;
+            canvasGroup.interactable = isEnabled;
+            canvasGroup.blocksRaycasts = isEnabled;
+        }
+        else
+        {
+            gameObject.SetActive(isEnabled);
+        }
     }
 
     void FindPlayer()
@@ -38,8 +64,10 @@ public class CompassController : MonoBehaviour
 
     void Update()
     {
+        if (canvasGroup != null && canvasGroup.alpha == 0) return;
+
         if (playerTransform == null || !playerTransform.gameObject.activeInHierarchy)
-        {
+{
             FindPlayer();
             return;
         }

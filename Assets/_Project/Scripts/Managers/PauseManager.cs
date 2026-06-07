@@ -53,6 +53,12 @@ public class PauseManager : MonoBehaviour
         else Pause();
     }
 
+    public event System.Action OnPaused;
+    public event System.Action OnResumed;
+
+    public static event System.Action OnPausedGlobal;
+    public static event System.Action OnResumedGlobal;
+
     public void Pause()
     {
         if (isPaused) return;
@@ -62,8 +68,11 @@ public class PauseManager : MonoBehaviour
         if (pauseOverlay != null)
             pauseOverlay.SetActive(true);
 
+        OnPaused?.Invoke();
+        OnPausedGlobal?.Invoke();
+
         if (!AuthManager.VR_ON)
-        {
+{
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
@@ -94,8 +103,11 @@ public class PauseManager : MonoBehaviour
         if (pauseOverlay != null)
             pauseOverlay.SetActive(false);
 
+        OnResumed?.Invoke();
+        OnResumedGlobal?.Invoke();
+
         if (!AuthManager.VR_ON)
-        {
+{
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
