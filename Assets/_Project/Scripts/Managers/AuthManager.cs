@@ -1,15 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using Unity.Services.Core;
 using Unity.Services.Authentication;
 using Unity.Services.CloudSave;
-using System.Collections.Generic;
+using Unity.Services.Core;
 
 public class AuthManager : MonoBehaviour
 {
-    // Global VR mode flag - accessible from anywhere
-    public static bool VR_ON = false; // Default to PC mode
+    public static bool VR_ON = true;
 
     [Header("UI References")]
     public GameObject inputPanel;
@@ -21,80 +20,77 @@ public class AuthManager : MonoBehaviour
     public TextMeshProUGUI detailsText;
     public GameObject verSelCloseBtn;
 
-    
+    private bool _isSigningUp;
 
-    private bool isSigningUp = false;
-
-    void Awake()
+    private void Awake()
     {
         CheckForVR();
     }
 
-    async void Start()
+    private async void Start()
     {
         await UnityServices.InitializeAsync();
     }
 
     private void CheckForVR()
     {
-        // Simple check for VR device presence
-        // This is a common pattern for multi-platform support
         bool isXRActive = false;
         var xrSettings = UnityEngine.XR.Management.XRGeneralSettings.Instance;
+
         if (xrSettings != null && xrSettings.Manager != null && xrSettings.Manager.activeLoader != null)
         {
             isXRActive = true;
         }
 
-        if (isXRActive)
+        if (isXRActive || Application.platform == RuntimePlatform.Android)
         {
             VR_ON = true;
-            Debug.Log("VR Device detected, setting VR_ON to true.");
+            Debug.Log("VR Mode auto-detected");
         }
     }
+
     public void SelectVRVersion()
     {
-        setVR_true();
+        SetVRTrue();
         LoadLevelData();
     }
-    
+
     public void SelectPCVersion()
     {
-        setVR_false();
+        SetVRFalse();
         LoadLevelData();
     }
 
-    public void SelectVRVersion_guest()
+    public void SelectVRVersionGuest()
     {
-        setVR_true();
-    }
-    
-    public void SelectPCVersion_guest()
-    {
-        setVR_false();
+        SetVRTrue();
     }
 
-    public void setVR_true()
+    public void SelectPCVersionGuest()
+    {
+        SetVRFalse();
+    }
+
+    private void SetVRTrue()
     {
         VR_ON = true;
         Debug.Log("VR Mode selected");
         SceneManager.LoadScene("EnvironmentMenu_VR");
     }
 
-    public void setVR_false()
+    private void SetVRFalse()
     {
         VR_ON = false;
         Debug.Log("PC Mode selected");
         SceneManager.LoadScene("Environment Menu");
     }
 
-
     public void OpenSignUp()
     {
         verSelCloseBtn.SetActive(false);
         detailsText.fontSize = 100;
         initUIParent.SetActive(false);
-        isSigningUp = true;
+        _isSigningUp = true;
         inputPanel.SetActive(true);
         statusText.text = "Create Account:";
     }
@@ -104,7 +100,7 @@ public class AuthManager : MonoBehaviour
         verSelCloseBtn.SetActive(false);
         detailsText.fontSize = 100;
         initUIParent.SetActive(false);
-        isSigningUp = false;
+        _isSigningUp = false;
         inputPanel.SetActive(true);
         statusText.text = "Welcome Back!";
     }
@@ -125,46 +121,42 @@ public class AuthManager : MonoBehaviour
 
     public async void OnSubmitPressed()
     {
-        string u = userField.text;
-        string p = passField.text;
+        string username = userField.text;
+        string password = passField.text;
 
-        if (string.IsNullOrEmpty(u) || string.IsNullOrEmpty(p))
+        if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
         {
             detailsText.text = "Fields cannot be empty";
             return;
         }
-    
 
         statusText.text = "Processing...";
 
         try
         {
-            if (isSigningUp)
+            if (_isSigningUp)
             {
-                await AuthenticationService.Instance.SignUpWithUsernamePasswordAsync(u, p);
+                await AuthenticationService.Instance.SignUpWithUsernamePasswordAsync(username, password);
                 SaveLevelData(1);
-                inputPanel.SetActive(false);
-                VersionSelectionPanel.SetActive(true);
             }
             else
             {
-                await AuthenticationService.Instance.SignInWithUsernamePasswordAsync(u, p);
-                inputPanel.SetActive(false);
-                VersionSelectionPanel.SetActive(true);
+                await AuthenticationService.Instance.SignInWithUsernamePasswordAsync(username, password);
             }
+
+            inputPanel.SetActive(false);
+            VersionSelectionPanel.SetActive(true);
         }
         catch (System.Exception e)
         {
-            
             statusText.text = "Error: " + e.Message;
 
-            // Display error in DetailsText with font size 40
             if (detailsText != null)
             {
                 detailsText.text = e.Message;
                 detailsText.fontSize = 40;
             }
-    
+
             Debug.LogError(e.Message);
         }
     }

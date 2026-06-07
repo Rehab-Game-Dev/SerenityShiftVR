@@ -24209,7 +24209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: m_TagString
@@ -24229,15 +24229,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.557617
+      value: 6.18
       objectReference: {fileID: 0}
     - target: {fileID: 400092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.112
+      value: -3.73
       objectReference: {fileID: 0}
     - target: {fileID: 400092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 100.08002
+      value: 99.77
       objectReference: {fileID: 0}
     - target: {fileID: 400092, guid: 5a7612e645ba26a43a6483249999e907, type: 3}
       propertyPath: m_LocalRotation.w
@@ -67718,7 +67718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!143 &395818441
 CharacterController:
   m_ObjectHideFlags: 0
@@ -154224,6 +154224,7 @@ MonoBehaviour:
   pcPlayer: {fileID: 395818440}
   xrRig: {fileID: 8320729036223036564}
   PC_Controls_Panel: {fileID: 0}
+  vrCameraHeight: 1.36
 --- !u!4 &868205549
 Transform:
   m_ObjectHideFlags: 0

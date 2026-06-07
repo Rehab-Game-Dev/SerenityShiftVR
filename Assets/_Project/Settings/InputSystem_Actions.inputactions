@@ -91,13 +91,24 @@
                     "name": "Menu",
                     "type": "Button",
                     "id": "a9e69c5e-8888-4444-9999-777777777777",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 }
             ],
             "bindings": [
+                {
+                    "name": "",
+                    "id": "65740a9b-21b5-4f02-a6a8-afa64e28dd3d",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerRight>{LeftHand}/primarybutton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
                 {
                     "name": "",
                     "id": "b9e69c5e-1111-2222-3333-444444444444",
@@ -122,7 +133,18 @@
                 },
                 {
                     "name": "",
-"id": "978bfe49-cc26-4a3d-ab7b-7d7a29327403",
+                    "id": "dfd2aad0-b855-4902-8c0a-a74fcb02d804",
+                    "path": "<Joystick>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "978bfe49-cc26-4a3d-ab7b-7d7a29327403",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",

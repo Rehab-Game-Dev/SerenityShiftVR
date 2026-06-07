@@ -20,18 +20,16 @@ public class VRRig : MonoBehaviour
     public VRMap head;
     public VRMap leftHand;
     public VRMap rightHand;
-
     public Transform headConstraint;
-    public Vector3 bodyOffset = new Vector3(0, -1.5f, 0); // constant offset to position the body lower
+    public Vector3 bodyOffset = new Vector3(0, 1.2f, 0);
 
-    void LateUpdate() // use LateUpdate to ensure VR targets have updated
+    void LateUpdate()
     {
-        // Move the body according to the camera + the constant downward offset
-        transform.position = head.vrTarget.position + bodyOffset;
+        // Only follow head horizontally, let gravity handle Y
+        Vector3 newPos = head.vrTarget.position + bodyOffset;
+        transform.position = new Vector3(newPos.x, transform.position.y, newPos.z);
 
-        // Rotate the body to be upright
         transform.forward = Vector3.ProjectOnPlane(head.vrTarget.forward, Vector3.up).normalized;
-
         head.Map();
         leftHand.Map();
         rightHand.Map();
