@@ -12,7 +12,14 @@ public class TimerManager : MonoBehaviour
     void Start()
     {
         bool saved = PlayerPrefs.GetInt("TimerVisible", 1) == 1;
-        timerPanel.SetActive(saved);
+        if (timerPanel != null)
+        {
+            timerPanel.SetActive(saved);
+        }
+        else
+        {
+            Debug.LogWarning("timerPanel not assigned on TimerManager on " + gameObject.name);
+        }
     }
     
     void Update()
@@ -24,6 +31,8 @@ public class TimerManager : MonoBehaviour
 
     void DisplayTime(float time)
     {
+        if (timerText == null) return;
+        
         int minutes = Mathf.FloorToInt(time / 60f);
         int seconds = Mathf.FloorToInt(time % 60f);
         timerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);

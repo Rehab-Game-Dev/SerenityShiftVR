@@ -18250,9 +18250,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105523048c1fae744a538ea518ae112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarBrain
-  agent: {fileID: 0}
-  destination: {fileID: 232199666}
-  sensorLength: 5
+  rotationSpeed: 5
+  arrivalThreshold: 1
+  detectionDistance: 5
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  isStopped: 0
 --- !u!114 &195553428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36436,7 +36440,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 1.87
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -40502,9 +40506,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105523048c1fae744a538ea518ae112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarBrain
-  agent: {fileID: 0}
-  destination: {fileID: 232199666}
-  sensorLength: 5
+  rotationSpeed: 5
+  arrivalThreshold: 1
+  detectionDistance: 5
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  isStopped: 0
 --- !u!114 &433965228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92866,6 +92874,10 @@ MonoBehaviour:
   amount: 100
   range: 50
   spawnScale: {x: 1.4, y: 1.4, z: 1.4}
+  buildingLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  clearanceRadius: 0.5
 --- !u!4 &1035369569
 Transform:
   m_ObjectHideFlags: 0
@@ -92925,9 +92937,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105523048c1fae744a538ea518ae112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarBrain
-  agent: {fileID: 0}
-  destination: {fileID: 232199666}
-  sensorLength: 5
+  rotationSpeed: 5
+  arrivalThreshold: 1
+  detectionDistance: 5
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  isStopped: 0
 --- !u!1001 &1037956558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119678,9 +119694,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105523048c1fae744a538ea518ae112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarBrain
-  agent: {fileID: 0}
-  destination: {fileID: 232199666}
-  sensorLength: 5
+  rotationSpeed: 5
+  arrivalThreshold: 1
+  detectionDistance: 5
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  isStopped: 0
 --- !u!1001 &1326619573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -149609,9 +149629,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105523048c1fae744a538ea518ae112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarBrain
-  agent: {fileID: 0}
-  destination: {fileID: 232199666}
-  sensorLength: 5
+  rotationSpeed: 5
+  arrivalThreshold: 1
+  detectionDistance: 5
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  isStopped: 0
 --- !u!1001 &1673235324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -160715,9 +160739,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105523048c1fae744a538ea518ae112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarBrain
-  agent: {fileID: 0}
-  destination: {fileID: 232199666}
-  sensorLength: 5
+  rotationSpeed: 5
+  arrivalThreshold: 1
+  detectionDistance: 5
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  isStopped: 0
 --- !u!1001 &1813559760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173782,9 +173810,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105523048c1fae744a538ea518ae112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarBrain
-  agent: {fileID: 0}
-  destination: {fileID: 232199666}
-  sensorLength: 5
+  rotationSpeed: 5
+  arrivalThreshold: 1
+  detectionDistance: 5
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  isStopped: 0
 --- !u!4 &1964559980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 06b8eaf4f93337a429a9583513971500, type: 3}

@@ -1,31 +1,38 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class VRPauseMenu : MonoBehaviour
 {
-    [Header("Input")]
-    public InputActionReference jumpAction;
-    
     [Header("UI References")]
     public GameObject vrMenuCanvas;
     public Toggle compassToggle;
     public Button resumeButton;
+    public Button mainMenuButton;
 
     [Header("Placement Settings")]
     public Transform cameraTransform;
-    public float distanceFromCamera = 2.0f;
+    public float distanceFromCamera = 0.8f;
     public float heightOffset = 0.0f;
-    public float horizontalOffset = -0.15f;
+    public float horizontalOffset = 0.0f;
 
     private void Awake()
-{
+    {
         if (compassToggle != null)
         {
             compassToggle.isOn = PlayerPrefs.GetInt("CompassToggle", 1) == 1;
             compassToggle.onValueChanged.AddListener(OnCompassToggleChanged);
         }
         if (resumeButton != null) resumeButton.onClick.AddListener(ResumeGame);
+        if (mainMenuButton != null) mainMenuButton.onClick.AddListener(LoadMainMenu);
+    }
+
+    public void LoadMainMenu()
+    {
+        Time.timeScale = 1f;
+        string sceneName = AuthManager.VR_ON ? "MainMenu_VR" : "MainMenu";
+        SceneManager.LoadScene(sceneName);
     }
 
     public void ResumeGame()
@@ -41,9 +48,9 @@ public class VRPauseMenu : MonoBehaviour
     }
 
     private void OnEnable()
-{
-        if (jumpAction != null) jumpAction.action.performed += OnJumpPerformed;
-        
+    {
+        if (AuthManager.VR_ON) PositionMenu();
+
         PauseManager.OnPausedGlobal -= HandleGamePaused;
         PauseManager.OnResumedGlobal -= HandleGameResumed;
         PauseManager.OnPausedGlobal += HandleGamePaused;
@@ -52,16 +59,8 @@ public class VRPauseMenu : MonoBehaviour
 
     private void OnDisable()
     {
-        if (jumpAction != null) jumpAction.action.performed -= OnJumpPerformed;
         PauseManager.OnPausedGlobal -= HandleGamePaused;
         PauseManager.OnResumedGlobal -= HandleGameResumed;
-    }
-
-    private void OnJumpPerformed(InputAction.CallbackContext context)
-    {
-        // Try to find any manager to toggle
-        var pm = Object.FindFirstObjectByType<PauseManager>();
-        if (pm != null) pm.TogglePause();
     }
 
     [Header("Debug")]
@@ -70,11 +69,25 @@ public class VRPauseMenu : MonoBehaviour
     private void HandleGamePaused()
     {
         lastStatus = "Pause Received at " + Time.unscaledTime;
-        if (AuthManager.VR_ON && vrMenuCanvas != null)
+        if (vrMenuCanvas != null)
         {
             vrMenuCanvas.SetActive(true);
-            PositionMenu();
-            lastStatus += " | Menu Shown";
+            
+            Canvas canvas = vrMenuCanvas.GetComponent<Canvas>();
+            if (AuthManager.VR_ON)
+            {
+                PositionMenu();
+                lastStatus += " | VR Menu Positioned";
+            }
+            else
+            {
+                if (canvas != null)
+                {
+                    canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+                    vrMenuCanvas.transform.localScale = Vector3.one;
+                }
+                lastStatus += " | PC Menu Shown (Overlay)";
+            }
         }
     }
 
@@ -115,7 +128,6 @@ public class VRPauseMenu : MonoBehaviour
 
         if (cameraTransform != null && vrMenuCanvas != null)
         {
-            // Lock to POV: Parent the canvas to the camera
             vrMenuCanvas.transform.SetParent(cameraTransform);
 
             Canvas canvas = vrMenuCanvas.GetComponent<Canvas>();
@@ -124,27 +136,22 @@ public class VRPauseMenu : MonoBehaviour
             if (canvas != null)
             {
                 canvas.renderMode = RenderMode.WorldSpace;
-                canvas.worldCamera = cameraTransform.GetComponent<Camera>();
-            }
+                Camera camComp = cameraTransform.GetComponent<Camera>();
+                if (camComp == null) camComp = Camera.main;
+                canvas.worldCamera = camComp;
+                canvas.sortingOrder = 100;
+}
 
             if (rectTransform != null)
             {
-                // Set a reasonable size for the VR menu if it's currently 0
                 if (rectTransform.sizeDelta.x < 100)
                 {
                     rectTransform.sizeDelta = new Vector2(800, 600);
                 }
             }
 
-            // Force a valid scale for world space.
             vrMenuCanvas.transform.localScale = new Vector3(0.0015f, 0.0015f, 0.0015f);
-
-            // Set local position relative to camera
             vrMenuCanvas.transform.localPosition = new Vector3(horizontalOffset, heightOffset, distanceFromCamera);
-            
-            // In uGUI, the "front" of the UI faces the negative Z direction. 
-            // When parented to the camera and placed at a positive Z offset, 
-            // a local rotation of 0 makes it face the player correctly.
             vrMenuCanvas.transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
     }

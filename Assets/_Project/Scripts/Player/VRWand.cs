@@ -32,12 +32,17 @@ public class VRWand : MonoBehaviour
     void ShootRay()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, range))
+        // Use the birdLayer mask and ignore triggers if necessary
+        if (Physics.Raycast(transform.position, transform.forward, out hit, range, birdLayer))
         {
-            // 1. Check Birds
-            if (hit.transform.CompareTag("Bird") || hit.transform.name.Contains("cardinal"))
+            Transform current = hit.transform;
+            BirdCatchable bird = current.GetComponentInParent<BirdCatchable>();
+            
+            // 1. Check Birds (check current or any parent for tag)
+            bool isBird = current.CompareTag("Bird") || (current.parent != null && current.parent.CompareTag("Bird")) || current.name.Contains("cardinal");
+            
+            if (isBird || bird != null)
             {
-                BirdCatchable bird = hit.transform.GetComponent<BirdCatchable>();
                 if (bird != null)
                 {
                     bird.CatchBird();
@@ -45,16 +50,19 @@ public class VRWand : MonoBehaviour
                 else
                 {
                     // Fallback for simple bird objects
-                    CatchBirdFallback(hit.transform.gameObject);
+                    CatchBirdFallback(current.gameObject);
                 }
             }
             // 2. Check NPCs
-            else if (hit.transform.CompareTag("NPC") || hit.transform.GetComponent<NPCCollision>() != null)
+            else 
             {
-                NPCCollision npc = hit.transform.GetComponent<NPCCollision>();
-                if (npc != null && npc.isCatchable)
+                NPCCollision npc = current.GetComponentInParent<NPCCollision>();
+                if (npc != null && (current.CompareTag("NPC") || (current.parent != null && current.parent.CompareTag("NPC"))))
                 {
-                    npc.CatchNPC();
+                    if (npc.isCatchable)
+                    {
+                        npc.CatchNPC();
+                    }
                 }
             }
         }

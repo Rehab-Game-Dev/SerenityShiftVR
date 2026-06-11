@@ -20,22 +20,29 @@ public class PCWand : MonoBehaviour
         
         if (Physics.Raycast(transform.position, transform.forward, out hit, range))
         {
+            Transform current = hit.transform;
+            BirdCatchable birdScript = current.GetComponentInParent<BirdCatchable>();
+
             // 1. Check Birds
-            if (hit.transform.CompareTag("Bird"))
+            bool isBird = current.CompareTag("Bird") || (current.parent != null && current.parent.CompareTag("Bird"));
+            
+            if (isBird || birdScript != null)
             {
-                BirdCatchable birdScript = hit.transform.GetComponent<BirdCatchable>();
                 if (birdScript != null)
                 {
                     birdScript.CatchBird();
                 }
             }
             // 2. Check NPCs
-            else if (hit.transform.CompareTag("NPC") || hit.transform.GetComponent<NPCCollision>() != null)
+            else
             {
-                NPCCollision npc = hit.transform.GetComponent<NPCCollision>();
-                if (npc != null && npc.isCatchable)
+                NPCCollision npc = current.GetComponentInParent<NPCCollision>();
+                if (npc != null && (current.CompareTag("NPC") || (current.parent != null && current.parent.CompareTag("NPC"))))
                 {
-                    npc.CatchNPC();
+                    if (npc.isCatchable)
+                    {
+                        npc.CatchNPC();
+                    }
                 }
             }
         }

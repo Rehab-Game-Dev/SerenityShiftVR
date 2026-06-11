@@ -48969,11 +48969,6 @@ MonoBehaviour:
   - m_Rig: {fileID: 1182252637}
     m_Active: 1
   m_Effectors: []
---- !u!95 &400281534 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 413562869133271636, guid: 1e702983913400042ac3fcd1173a6d37, type: 3}
-  m_PrefabInstance: {fileID: 400281522}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &400281536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48987,10 +48982,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRAnimatorController
   speedThreshold: 0.1
-  smoothing: 0.1
-  speedParameter: speed
-  animator: {fileID: 400281534}
-  vrRigRoot: {fileID: 1257326761}
 --- !u!1001 &400595323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123190,6 +123181,10 @@ MonoBehaviour:
   amount: 150
   range: 100
   spawnScale: {x: 1.4, y: 1.4, z: 1.4}
+  buildingLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  clearanceRadius: 0.5
 --- !u!4 &1035369569
 Transform:
   m_ObjectHideFlags: 0
@@ -183047,7 +183042,7 @@ MonoBehaviour:
   m_OriginBaseGameObject: {fileID: 1543125692}
   m_CameraFloorOffsetObject: {fileID: 666937280}
   m_RequestedTrackingOriginMode: 2
-  m_CameraYOffset: 1.1176
+  m_CameraYOffset: 1.87
 --- !u!114 &1543125697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183187,13 +183182,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 1.87
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.935, z: 0}
 --- !u!114 &1543946188
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26020,7 +26020,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 1.87
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -26039,9 +26039,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7d5f3972e826b41bb8d33e82bc0f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 5
-  lookSpeed: 2
+  moveSpeed: 5
+  sprintSpeed: 8
+  gravity: -9.81
+  jumpHeight: 1.2
   cameraTransform: {fileID: 528159705}
+  mouseSensitivity: 0.12
+  pitchMin: -80
+  pitchMax: 80
+  lockCursor: 1
 --- !u!136 &395818443
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -83084,8 +83090,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4039e4a09ddd44ab82a6412cb09f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimplePatrol
-  a: {fileID: 186601559}
-  b: {fileID: 1000355813}
+  waypoints: []
+  animator: {fileID: 0}
+  speedParam: speed
+  animDamp: 0.12
 --- !u!1001 &1232384304
 PrefabInstance:
   m_ObjectHideFlags: 0

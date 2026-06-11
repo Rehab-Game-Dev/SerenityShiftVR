@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3370746088813646306}
   - component: {fileID: 5981660603666824027}
   - component: {fileID: 7821641073952036911}
+  - component: {fileID: 8272852302035792144}
   m_Layer: 6
   m_Name: XR Origin (VR)
   m_TagString: Untagged
@@ -57,7 +58,7 @@ MonoBehaviour:
   m_OriginBaseGameObject: {fileID: 966334264437057290}
   m_CameraFloorOffsetObject: {fileID: 2897167335168338509}
   m_RequestedTrackingOriginMode: 2
-  m_CameraYOffset: 1.1176
+  m_CameraYOffset: 1.87
 --- !u!114 &3082954592252765426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,13 +91,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 1.87
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.935, z: 0}
 --- !u!114 &50694220624030704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +219,20 @@ MonoBehaviour:
     m_InputActionReference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     m_ObjectReferenceObject: {fileID: 0}
     m_ManualValue: {x: 0, y: 0}
+--- !u!114 &8272852302035792144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966334264437057290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062482db8942a264cb303b06227637f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseManager
+  pauseOverlay: {fileID: 0}
+  pauseAction: {fileID: 11400000, guid: 487fe1a7ec504a04f8543ed3daddd8c9, type: 2}
 --- !u!1 &1572344671710590860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,7 +1237,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 1.87
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3

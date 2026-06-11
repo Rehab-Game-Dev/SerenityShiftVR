@@ -5,49 +5,47 @@ public class MenuLoader : MonoBehaviour
 {
     public void LoadTutorial()
     {
-        SceneManager.LoadScene("StreetScene - tutorial");
+        Time.timeScale = 1f;
+        StartCoroutine(LoadSceneAsync("StreetScene - tutorial"));
     }
     public void LoadEasy()
     {
-        SceneManager.LoadScene("StreetScene - easy");
+        Time.timeScale = 1f;
+        StartCoroutine(LoadSceneAsync("StreetScene - easy"));
     }
     public void LoadMedium()
     {
-        SceneManager.LoadScene("StreetScene - medium");
+        Time.timeScale = 1f;
+        StartCoroutine(LoadSceneAsync("StreetScene - medium"));
     }
     public void LoadHard()
     {
-        SceneManager.LoadScene("StreetScene - hard");
+        Time.timeScale = 1f;
+        StartCoroutine(LoadSceneAsync("StreetScene - hard"));
     }
     public void LoadMainMenu()
     {
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        if (AuthManager.VR_ON)
+        string sceneName = AuthManager.VR_ON ? "MainMenu_VR" : "MainMenu";
+        StartCoroutine(LoadSceneAsync(sceneName));
+    }
+
+    private System.Collections.IEnumerator LoadSceneAsync(string sceneName)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        while (!asyncLoad.isDone)
         {
-            SceneManager.LoadScene("MainMenu_VR");
-        }
-        else
-        {
-            SceneManager.LoadScene("MainMenu");
+            yield return null;
         }
     }
+
     public void Street()
     {
-        Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        if (AuthManager.VR_ON)
-        {
-            SceneManager.LoadScene("MainMenu_VR");
-        }
-        else
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
+        LoadMainMenu();
     }
-    public void Train()
+public void Train()
     {
         // Do nothing for now    
     }

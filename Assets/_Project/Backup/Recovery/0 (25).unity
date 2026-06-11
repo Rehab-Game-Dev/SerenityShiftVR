@@ -45324,7 +45324,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 1.87
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -71684,8 +71684,9 @@ MonoBehaviour:
   - {fileID: 8395099318509369438, guid: fcfeff2a56335984ebaeb175ab2c0e21, type: 3}
   - {fileID: 6741746323168491683, guid: 47cdf29d05da82d49b7a919d9612fdab, type: 3}
   - {fileID: 5241944997321305580, guid: 683e0b361d2b1ba4f9db1b54d01d41e3, type: 3}
-  destination: {fileID: 1409672316}
+  myRoute: []
   spawnInterval: 20
+  startDelay: 1
 --- !u!1001 &624862018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115367,6 +115368,10 @@ MonoBehaviour:
   amount: 150
   range: 100
   spawnScale: {x: 1.4, y: 1.4, z: 1.4}
+  buildingLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  clearanceRadius: 0.5
 --- !u!4 &1035369569
 Transform:
   m_ObjectHideFlags: 0
