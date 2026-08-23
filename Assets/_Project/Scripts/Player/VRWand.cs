@@ -4,74 +4,137 @@ using UnityEngine.XR;
 public class VRWand : MonoBehaviour
 {
     [Header("Settings")]
-    public XRNode controllerNode = XRNode.RightHand; // Which hand? Right or Left
-    public float range = 100f; // Ray distance
-    public LayerMask birdLayer; // To hit only birds (optional)
+    public XRNode controllerNode = XRNode.RightHand; // איזו יד? ימין או שמאל
+    public float range = 100f;                        // מרחק הקרן
+
+    [Tooltip("להשאיר Everything בזמן דיבוג כדי לפגוע בכל ה-layers. " +
+             "אחרי שהקאץ' עובד, לסמן כאן רק את ה-layer של הציפורים/NPCs.")]
+    public LayerMask hitLayers = ~0;                  // ברירת מחדל: הכל (~0), לא Nothing
 
     [Header("Visuals")]
-    public GameObject hitEffect; // Hit effect (optional)
+    public GameObject hitEffect;                      // אפקט פגיעה (אופציונלי)
+
+    [Header("Debug")]
+    public bool debugLogging = true;                  // הדפסות + ציור הקרן ב-Scene view
 
     private bool isTriggerPressed = false;
-    private bool wasPressedLastFrame = false; // To prevent continuous firing
+    private bool wasPressedLastFrame = false;         // מונע ירי רציף כשמחזיקים
 
     void Update()
     {
-        // 1. Check input from the controller (is the trigger pressed?)
         InputDevice device = InputDevices.GetDeviceAtXRNode(controllerNode);
+
+        // אם השלט לא נמצא/לא tracked — נדע מיד במקום "לחיצה שלא עושה כלום"
+        if (!device.isValid)
+        {
+            if (debugLogging && Time.frameCount % 120 == 0)
+                Debug.LogWarning($"[VRWand] No valid XR device at {controllerNode}. " +
+                                 "בדוק שה-controllerNode נכון ושהשלט מזוהה.");
+            return;
+        }
+
         device.TryGetFeatureValue(CommonUsages.triggerButton, out isTriggerPressed);
 
-        // We want this to happen only on the press moment (Down), not when the button is held
+        // רק ברגע הלחיצה (Down), לא בהחזקה
         if (isTriggerPressed && !wasPressedLastFrame)
         {
             ShootRay();
         }
-
         wasPressedLastFrame = isTriggerPressed;
     }
 
     void ShootRay()
     {
         RaycastHit hit;
-        // Use the birdLayer mask and ignore triggers if necessary
-        if (Physics.Raycast(transform.position, transform.forward, out hit, range, birdLayer))
+        bool didHit = Physics.Raycast(transform.position, transform.forward,
+                                      out hit, range, hitLayers, QueryTriggerInteraction.Ignore);
+
+        if (debugLogging)
         {
-            Transform current = hit.transform;
-            BirdCatchable bird = current.GetComponentInParent<BirdCatchable>();
-            
-            // 1. Check Birds (check current or any parent for tag)
-            bool isBird = current.CompareTag("Bird") || (current.parent != null && current.parent.CompareTag("Bird")) || current.name.Contains("cardinal");
-            
-            if (isBird || bird != null)
-            {
-                if (bird != null)
-                {
-                    bird.CatchBird();
-                }
-                else
-                {
-                    // Fallback for simple bird objects
-                    CatchBirdFallback(current.gameObject);
-                }
-            }
-            // 2. Check NPCs
-            else 
-            {
-                NPCCollision npc = current.GetComponentInParent<NPCCollision>();
-                if (npc != null && (current.CompareTag("NPC") || (current.parent != null && current.parent.CompareTag("NPC"))))
-                {
-                    if (npc.isCatchable)
-                    {
-                        npc.CatchNPC();
-                    }
-                }
-            }
+            Debug.DrawRay(transform.position, transform.forward * range,
+                          didHit ? Color.green : Color.red, 2f);
+
+            if (didHit)
+                Debug.Log($"[VRWand] HIT '{hit.transform.name}' " +
+                          $"on layer '{LayerMask.LayerToName(hit.transform.gameObject.layer)}'");
+            else
+                Debug.Log("[VRWand] Ray hit NOTHING. " +
+                          "אם גם עם hitLayers=Everything אין פגיעה — בעיית כיוון/קוליידר, לא layer.");
         }
+
+        if (!didHit) return;
+
+        Transform hitTransform = hit.transform;
+
+        // קודם ננסה לקבל את הרכיב הלוגי ישירות מההיררכיה של מה שפגענו בו
+        BirdCatchable bird = hitTransform.GetComponentInParent<BirdCatchable>();
+        if (bird != null)
+        {
+            // CatchBird() אחראי בעצמו לבדוק אם כבר נתפסה — הידע הזה שייך לציפור, לא ל-wand
+            if (debugLogging) Debug.Log($"[VRWand] Catching bird '{bird.name}'");
+            bird.CatchBird();
+            SpawnHitEffect(bird.transform.position);
+            return;
+        }
+
+        // fallback: זיהוי לפי tag/שם עד ל-root של הפריפאב
+        Transform birdRoot = GetBirdRoot(hitTransform);
+        if (birdRoot != null)
+        {
+            CatchBirdFallback(birdRoot.gameObject);
+            return;
+        }
+
+        // אם זו לא ציפור — אולי זה NPC
+        NPCCollision npc = hitTransform.GetComponentInParent<NPCCollision>();
+        if (npc != null && npc.isCatchable)
+        {
+            npc.CatchNPC();
+            SpawnHitEffect(hitTransform.position);
+        }
+        else if (debugLogging)
+        {
+            Debug.Log($"[VRWand] פגעתי ב-'{hitTransform.name}' אבל אין עליו " +
+                      "BirdCatchable/NPCCollision באף הורה. כנראה קוליידר לא נכון או prefab root.");
+        }
+    }
+
+    private Transform GetBirdRoot(Transform t)
+    {
+        Transform current = t;
+        Transform root = null;
+        while (current != null)
+        {
+            if (current.CompareTag("Bird") || current.CompareTag("lb_bird") ||
+                current.name.ToLower().Contains("cardinal"))
+            {
+                root = current;
+            }
+            current = current.parent;
+        }
+        return root;
     }
 
     void CatchBirdFallback(GameObject bird)
     {
-        Debug.Log("Caught bird (fallback): " + bird.name);
-        if (hitEffect != null) Instantiate(hitEffect, bird.transform.position, Quaternion.identity);
+        if (debugLogging) Debug.Log("[VRWand] Caught bird (fallback): " + bird.name);
+
+        if (bird.name.ToLower().Contains("cardinal") ||
+            bird.CompareTag("Bird") || bird.CompareTag("lb_bird"))
+        {
+            if (GoalMessageController.Instance != null)
+                GoalMessageController.Instance.OnBirdCaught();
+            else
+                Debug.LogWarning("[VRWand] נתפסה ציפור-מטרה ב-fallback אבל " +
+                                 "GoalMessageController.Instance == null!");
+        }
+
+        SpawnHitEffect(bird.transform.position);
         Destroy(bird);
+    }
+
+    private void SpawnHitEffect(Vector3 pos)
+    {
+        if (hitEffect != null) Instantiate(hitEffect, pos, Quaternion.identity);
     }
 }
